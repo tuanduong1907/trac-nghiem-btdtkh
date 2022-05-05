@@ -75,6 +75,7 @@
             justify-content: center;
             align-items: center;
             transition: all 0.2s linear;
+            pointer-events: none;
           }
           .answerContent {
             @include text18;
@@ -82,14 +83,15 @@
             padding: 8px 20px;
             border-radius: 12px;
             background-color: $color9;
+            pointer-events: none;
             transition: all 0.2s linear;
           }
-        }
-        .answerItemActive {
-          .optAnswer,
-          .answerContent {
-            background-color: $color3 !important;
-            color: $color1 !important;
+          &.answerItemActive {
+            .optAnswer,
+            .answerContent {
+              background-color: $color3 !important;
+              color: $color1 !important;
+            }
           }
         }
       }

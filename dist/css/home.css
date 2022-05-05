@@ -81,6 +81,7 @@
   justify-content: center;
   align-items: center;
   transition: all 0.2s linear;
+  pointer-events: none;
 }
 .questionWrap .questionMainWrap .questionMain .answerList .answerItem .answerContent {
   font-size: 1.125rem;
@@ -89,10 +90,11 @@
   padding: 8px 20px;
   border-radius: 12px;
   background-color: #f5f5f5;
+  pointer-events: none;
   transition: all 0.2s linear;
 }
-.questionWrap .questionMainWrap .questionMain .answerList .answerItemActive .optAnswer,
-.questionWrap .questionMainWrap .questionMain .answerList .answerItemActive .answerContent {
+.questionWrap .questionMainWrap .questionMain .answerList .answerItem.answerItemActive .optAnswer,
+.questionWrap .questionMainWrap .questionMain .answerList .answerItem.answerItemActive .answerContent {
   background-color: #8c6546 !important;
   color: #ffffff !important;
 }
