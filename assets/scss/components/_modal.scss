@@ -1,0 +1,93 @@
+// modal dialog
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fadeIn linear 0.25s;
+  .modalContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color1;
+    width: 500px;
+    border-radius: 12px;
+    cursor: default;
+    margin-inline: 15px;
+    .modalHeader {
+      position: relative;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      padding-inline: 20px;
+      background-color: $color3;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+      p {
+        @include text18;
+        color: $color1;
+        font-weight: 600;
+      }
+      .modalClose {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        svg {
+          height: 24px;
+          fill: $color1;
+          pointer-events: none;
+        }
+      }
+    }
+    .modalContent {
+      padding: 20px;
+      p {
+        margin-bottom: 5px;
+        span {
+          font-weight: 500;
+        }
+      }
+      .modalContentHeading {
+        @include text20;
+        font-weight: 500;
+        color: $color8;
+        margin-bottom: 10px;
+      }
+      .modalContentBtnWrap {
+        display: flex;
+        gap: 0 12px;
+        padding-top: 10px;
+        .modalContentBtn {
+          @include text16;
+          &.Secondary {
+            color: $color1;
+          }
+        }
+      }
+    }
+  }
+}
+// end modal dialog
+
+// Responsive
+/* Mobie: width < 740px */
+@media only screen and (max-width: 739px) {
+  .modalDialog {
+    .modalContainer {
+      width: 95%;
+      margin-inline: 0;
+      .modalContent {
+        .modalContentHeading {
+          @include text16;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

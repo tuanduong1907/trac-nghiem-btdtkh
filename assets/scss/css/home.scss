@@ -5,20 +5,23 @@
 // mixins
 @import "../abstracts/mixins";
 // end mixins
+
+// modal
+@import "../components/modal";
+// end modal
+
 .questionWrap {
   display: flex;
-  margin-block: 20px;
   gap: 40px;
   background-color: $color9;
   padding: 40px;
   width: calc(100% - 40px);
   border-radius: 12px;
-  margin-bottom: 60px;
   .questionMainWrap {
     position: relative;
     flex: 3;
     background-color: $color1;
-    padding: 40px;
+    padding: 30px;
     border-radius: 12px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: relative;
@@ -28,7 +31,6 @@
       .questionHeading {
         position: absolute;
         top: -25px;
-        left: 40px;
         background-color: $color3;
         color: $color1;
         padding: 8px 20px;
@@ -44,7 +46,6 @@
         padding: 8px 20px;
         background-color: $color5;
         border-radius: 12px;
-        margin-top: 20px;
         user-select: none;
       }
       .answerList {
@@ -76,6 +77,7 @@
             align-items: center;
             transition: all 0.2s linear;
             pointer-events: none;
+            flex-shrink: 0;
           }
           .answerContent {
             @include text18;
@@ -102,9 +104,9 @@
       justify-content: space-between;
       .questionBtn {
         gap: 0 12px;
-        border-radius: 100rem;
+        border-radius: 8px;
         width: 130px;
-        height: 36px;
+        height: 34px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -146,7 +148,19 @@
     background-color: $color1;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 12px;
-    padding: 40px;
+    padding: 30px;
+    position: relative;
+    .questionHeading {
+      position: absolute;
+      padding: 8px 20px;
+      background-color: $color3;
+      color: $color1;
+      font-weight: 600;
+      text-transform: capitalize;
+      border-radius: 12px;
+      top: -25px;
+      box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    }
     .questionListWrap {
       display: flex;
       justify-content: space-between;
@@ -156,22 +170,39 @@
         gap: 10px;
         .questionItem {
           display: flex;
-
           cursor: pointer;
+          border-radius: 8px;
+          overflow: hidden;
+          border: 1px solid $color8;
           .textValSelected,
           .titleItemQuestion {
-            border: 1px solid $color8;
+            border-right: 1px solid $color8;
             width: 35px;
             height: 35px;
             display: flex;
             justify-content: center;
             align-items: center;
+            pointer-events: none;
           }
           .titleItemQuestion {
             font-weight: 600;
           }
           .textValSelected {
             border-left: 0;
+            &.active {
+              background-color: $color3;
+              font-weight: 600;
+              color: $color1;
+            }
+            &:last-child {
+              border-right: none;
+            }
+          }
+          &:hover {
+            background-color: $color9;
+          }
+          &.active {
+            background-color: #dddd;
           }
         }
       }
@@ -180,8 +211,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 40px;
-      svg{
+      margin-bottom: 30px;
+      svg {
         display: none;
       }
       .textNumberCount {
@@ -196,12 +227,21 @@
       align-items: center;
       gap: 12px;
       margin-top: 40px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      bottom: 70px;
     }
   }
 }
 
 /* Mobile & tablet: width <1024px */
 @media only screen and (max-width: 1023px) {
+  .wrapMain {
+    height: auto;
+    overflow-y: auto;
+  }
   .questionWrap {
     flex-direction: column;
     .questionMainWrap {
@@ -213,6 +253,7 @@
         }
         .questionContent {
           @include text14;
+          margin-top: 20px;
         }
         .answerList {
           .answerItem {
@@ -232,6 +273,9 @@
       }
     }
     .questionSubWrap {
+      .questionHeading{
+        @include text14;
+      }
       .questionCountdown {
         margin-top: 0;
         position: fixed;
@@ -245,7 +289,7 @@
         display: flex;
         align-items: center;
         gap: 4px;
-        svg{
+        svg {
           display: block;
           fill: $color1;
           height: 20px;
@@ -258,6 +302,10 @@
       .questionBtn {
         @include text14;
       }
+      .questionBtnWrap {
+        position: static;
+        transform: translateX(0);
+      }
     }
   }
 }
@@ -267,8 +315,9 @@
   .questionWrap {
     padding: 0;
     background-color: $color1;
-    gap: 15px;
-    margin-top: 29px;
+    gap: 40px;
+    margin-block: 25px;
+    width: 100%;
     .questionMainWrap {
       padding: 15px;
       .questionNavigation {
@@ -280,9 +329,13 @@
     }
     .questionSubWrap {
       padding: 15px;
+      .questionHeading {
+        @include text14;
+      }
       .questionListWrap {
         justify-content: center;
         gap: 30px;
+        margin-top: 15px;
         .questionList {
           .questionItem {
             .titleItemQuestion,
@@ -301,7 +354,7 @@
         .textNumberCount {
           @include text16;
         }
-        svg{
+        svg {
           height: 16px;
         }
       }
@@ -312,8 +365,9 @@
 /* Tablet: width >= 740px and width < 1024px */
 @media only screen and (min-width: 740px) and (max-width: 1023px) {
   .questionWrap {
-    padding: 20px;
-    gap: 20px;
+    padding: 30px 20px 20px;
+    gap: 45px;
+    margin-block: 20px;
     .questionMainWrap {
       padding: 20px;
       .questionNavigation {
@@ -338,8 +392,8 @@
         height: auto;
       }
     }
-    .questionSubWrap{
-      .questionListWrap{
+    .questionSubWrap {
+      .questionListWrap {
         gap: 0 20px;
       }
     }
@@ -349,8 +403,8 @@
 /* PC: width >= 1024px */
 @media only screen and (min-width: 1024px) {
   .questionWrap {
-    .questionSubWrap{
-      .questionListWrap{
+    .questionSubWrap {
+      .questionListWrap {
         gap: 0 20px;
       }
     }

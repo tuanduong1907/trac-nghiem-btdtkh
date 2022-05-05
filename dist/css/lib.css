@@ -14327,43 +14327,65 @@ a.ui-button:active,
   color: #ffffff;
 }
 
-.wrapperFooter {
-  overflow-x: hidden;
-  background-color: #8c6546;
+.footer {
   height: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  overflow-x: hidden;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 10;
+  background-color: #8c6546;
+  display: flex;
+  align-items: center;
 }
-.wrapperFooter span {
-  font-size: 1rem;
-  line-height: 1.5rem;
+.footer .wrapperFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .wrapperFooter span {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   color: #ffffff;
   font-weight: 500;
 }
-.wrapperFooter .footerLinkWrap span {
+.footer .wrapperFooter .footerLinkWrap span {
   margin-right: 12px;
 }
-.wrapperFooter .footerLinkWrap a {
+.footer .wrapperFooter .footerLinkWrap a {
   color: #ffffff;
 }
 
 /* Mobile & tablet: width <1024px */
+@media only screen and (max-width: 1023px) {
+  .footer {
+    height: auto;
+    position: static;
+  }
+  .footer .wrapperFooter {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .footer .wrapperFooter span {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
 /* Mobie: width < 740px */
 @media only screen and (max-width: 739px) {
-  .wrapperFooter span, .wrapperFooter a {
+  .wrapperFooter span,
+.wrapperFooter a {
     font-size: 0.75rem;
     line-height: 1rem;
   }
 }
 /* Tablet: width >= 740px and width < 1024px */
 @media only screen and (min-width: 740px) and (max-width: 1023px) {
-  .wrapperFooter span, .wrapperFooter a {
+  .wrapperFooter span,
+.wrapperFooter a {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
@@ -14560,6 +14582,12 @@ button {
   }
 }
 @layer components {
+  .container-wrap {
+    max-width: 1720px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
   .button {
     padding: 4px 20px;
     display: inline-block;
@@ -14607,4 +14635,9 @@ button {
     height: auto;
     overflow-y: auto;
   }
+}
+.wrapMain {
+  height: calc(100vh - 120px - 40px);
+  display: flex;
+  align-items: center;
 }

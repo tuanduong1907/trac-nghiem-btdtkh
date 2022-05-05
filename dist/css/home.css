@@ -1,18 +1,107 @@
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-animation: fadeIn linear 0.25s;
+          animation: fadeIn linear 0.25s;
+}
+.modalDialog .modalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  width: 500px;
+  border-radius: 12px;
+  cursor: default;
+  margin-inline: 15px;
+}
+.modalDialog .modalContainer .modalHeader {
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-inline: 20px;
+  background-color: #8c6546;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+.modalDialog .modalContainer .modalHeader p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+.modalDialog .modalContainer .modalHeader .modalClose {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.modalDialog .modalContainer .modalHeader .modalClose svg {
+  height: 24px;
+  fill: #ffffff;
+  pointer-events: none;
+}
+.modalDialog .modalContainer .modalContent {
+  padding: 20px;
+}
+.modalDialog .modalContainer .modalContent p {
+  margin-bottom: 5px;
+}
+.modalDialog .modalContainer .modalContent p span {
+  font-weight: 500;
+}
+.modalDialog .modalContainer .modalContent .modalContentHeading {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 10px;
+}
+.modalDialog .modalContainer .modalContent .modalContentBtnWrap {
+  display: flex;
+  gap: 0 12px;
+  padding-top: 10px;
+}
+.modalDialog .modalContainer .modalContent .modalContentBtnWrap .modalContentBtn {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.modalDialog .modalContainer .modalContent .modalContentBtnWrap .modalContentBtn.Secondary {
+  color: #ffffff;
+}
+
+/* Mobie: width < 740px */
+@media only screen and (max-width: 739px) {
+  .modalDialog .modalContainer {
+    width: 95%;
+    margin-inline: 0;
+  }
+  .modalDialog .modalContainer .modalContent .modalContentHeading {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+  }
+}
 .questionWrap {
   display: flex;
-  margin-block: 20px;
   gap: 40px;
   background-color: #f5f5f5;
   padding: 40px;
   width: calc(100% - 40px);
   border-radius: 12px;
-  margin-bottom: 60px;
 }
 .questionWrap .questionMainWrap {
   position: relative;
   flex: 3;
   background-color: #ffffff;
-  padding: 40px;
+  padding: 30px;
   border-radius: 12px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: relative;
@@ -24,7 +113,6 @@
 .questionWrap .questionMainWrap .questionMain .questionHeading {
   position: absolute;
   top: -25px;
-  left: 40px;
   background-color: #8c6546;
   color: #ffffff;
   padding: 8px 20px;
@@ -44,7 +132,6 @@
   padding: 8px 20px;
   background-color: #dee2e6;
   border-radius: 12px;
-  margin-top: 20px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -82,6 +169,7 @@
   align-items: center;
   transition: all 0.2s linear;
   pointer-events: none;
+  flex-shrink: 0;
 }
 .questionWrap .questionMainWrap .questionMain .answerList .answerItem .answerContent {
   font-size: 1.125rem;
@@ -105,9 +193,9 @@
 }
 .questionWrap .questionMainWrap .questionNavigation .questionBtn {
   gap: 0 12px;
-  border-radius: 100rem;
+  border-radius: 8px;
   width: 130px;
-  height: 36px;
+  height: 34px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,7 +236,19 @@
   background-color: #ffffff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 12px;
-  padding: 40px;
+  padding: 30px;
+  position: relative;
+}
+.questionWrap .questionSubWrap .questionHeading {
+  position: absolute;
+  padding: 8px 20px;
+  background-color: #8c6546;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 12px;
+  top: -25px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .questionWrap .questionSubWrap .questionListWrap {
   display: flex;
@@ -162,15 +262,19 @@
 .questionWrap .questionSubWrap .questionListWrap .questionList .questionItem {
   display: flex;
   cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #333333;
 }
 .questionWrap .questionSubWrap .questionListWrap .questionList .questionItem .textValSelected,
 .questionWrap .questionSubWrap .questionListWrap .questionList .questionItem .titleItemQuestion {
-  border: 1px solid #333333;
+  border-right: 1px solid #333333;
   width: 35px;
   height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
 }
 .questionWrap .questionSubWrap .questionListWrap .questionList .questionItem .titleItemQuestion {
   font-weight: 600;
@@ -178,11 +282,25 @@
 .questionWrap .questionSubWrap .questionListWrap .questionList .questionItem .textValSelected {
   border-left: 0;
 }
+.questionWrap .questionSubWrap .questionListWrap .questionList .questionItem .textValSelected.active {
+  background-color: #8c6546;
+  font-weight: 600;
+  color: #ffffff;
+}
+.questionWrap .questionSubWrap .questionListWrap .questionList .questionItem .textValSelected:last-child {
+  border-right: none;
+}
+.questionWrap .questionSubWrap .questionListWrap .questionList .questionItem:hover {
+  background-color: #f5f5f5;
+}
+.questionWrap .questionSubWrap .questionListWrap .questionList .questionItem.active {
+  background-color: rgba(221, 221, 221, 0.8666666667);
+}
 .questionWrap .questionSubWrap .questionCountdown {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-bottom: 30px;
 }
 .questionWrap .questionSubWrap .questionCountdown svg {
   display: none;
@@ -199,10 +317,20 @@
   align-items: center;
   gap: 12px;
   margin-top: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  bottom: 70px;
 }
 
 /* Mobile & tablet: width <1024px */
 @media only screen and (max-width: 1023px) {
+  .wrapMain {
+    height: auto;
+    overflow-y: auto;
+  }
+
   .questionWrap {
     flex-direction: column;
   }
@@ -217,6 +345,7 @@
   .questionWrap .questionMainWrap .questionMain .questionContent {
     font-size: 0.875rem;
     line-height: 1.25rem;
+    margin-top: 20px;
   }
   .questionWrap .questionMainWrap .questionMain .answerList .answerItem .optAnswer,
 .questionWrap .questionMainWrap .questionMain .answerList .answerItem .answerContent {
@@ -229,13 +358,17 @@
     gap: 0 4px;
     width: 110px;
   }
+  .questionWrap .questionSubWrap .questionHeading {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
   .questionWrap .questionSubWrap .questionCountdown {
     margin-top: 0;
     position: fixed;
     bottom: 60px;
     right: 8px;
     padding: 8px 20px;
-    background-color: rgba(37, 99, 235, 0.75);
+    background-color: rgba(37, 99, 235, 0.9);
     border-radius: 8px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     z-index: 10;
@@ -257,14 +390,19 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
+  .questionWrap .questionSubWrap .questionBtnWrap {
+    position: static;
+    transform: translateX(0);
+  }
 }
 /* Mobie: width < 740px */
 @media only screen and (max-width: 739px) {
   .questionWrap {
     padding: 0;
     background-color: #ffffff;
-    gap: 15px;
-    margin-top: 29px;
+    gap: 40px;
+    margin-block: 25px;
+    width: 100%;
   }
   .questionWrap .questionMainWrap {
     padding: 15px;
@@ -278,9 +416,14 @@
   .questionWrap .questionSubWrap {
     padding: 15px;
   }
+  .questionWrap .questionSubWrap .questionHeading {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
   .questionWrap .questionSubWrap .questionListWrap {
     justify-content: center;
     gap: 30px;
+    margin-top: 15px;
   }
   .questionWrap .questionSubWrap .questionListWrap .questionList .questionItem .titleItemQuestion,
 .questionWrap .questionSubWrap .questionListWrap .questionList .questionItem .textValSelected {
@@ -304,8 +447,9 @@
 /* Tablet: width >= 740px and width < 1024px */
 @media only screen and (min-width: 740px) and (max-width: 1023px) {
   .questionWrap {
-    padding: 20px;
-    gap: 20px;
+    padding: 30px 20px 20px;
+    gap: 45px;
+    margin-block: 20px;
   }
   .questionWrap .questionMainWrap {
     padding: 20px;

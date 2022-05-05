@@ -129,7 +129,7 @@ p {
   margin-bottom: 0;
 }
 
-button{
+button {
   border: none;
   outline: none;
 }
@@ -239,6 +239,11 @@ button{
 }
 // end title section
 @layer components {
+  .container-wrap {
+    max-width: 1720px;
+    width: 100%;
+    margin-inline: auto;
+  }
   .button {
     padding: 4px 20px;
     display: inline-block;
@@ -246,18 +251,18 @@ button{
     border: none;
     font-weight: 600;
     transition: all linear 0.2s;
-    &Primary1{
+    &Primary1 {
       background-color: $color3 !important;
       color: $color1;
-      &:hover{
-        opacity: .75;
+      &:hover {
+        opacity: 0.75;
       }
     }
-    &Secondary{
+    &Secondary {
       background-color: transparent;
       color: $color3;
       border: 1px solid $color3 !important;
-      &:hover{
+      &:hover {
         background-color: $color3 !important;
         color: $color1;
       }
@@ -276,11 +281,16 @@ button{
   }
 }
 
-
 /* Mobile & tablet: width <1024px */
-@media only screen and (max-width: 1023px){
-  body{
+@media only screen and (max-width: 1023px) {
+  body {
     height: auto;
     overflow-y: auto;
   }
+}
+
+.wrapMain {
+  height: calc(100vh - 120px - 40px);
+  display: flex;
+  align-items: center;
 }
