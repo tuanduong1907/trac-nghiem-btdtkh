@@ -1,0 +1,286 @@
+// variables
+@import "../abstracts/variables";
+// end variables
+
+// mixins
+@import "../abstracts/mixins";
+// end mixins
+
+// bootstrap
+@import "../vendors/bootstrap";
+// end bootstrap
+
+// slick
+@import "../vendors/slick";
+// end slick
+
+@import "../vendors/jqueryui";
+
+// button
+@import "../components/button";
+// end button
+
+// header
+@import "../components/header";
+// end header
+
+// popup booking
+@import "../components/popupBooking";
+// end popup booking
+
+// list link social
+@import "../components/listLinkSocial";
+// end list link social
+
+// popup language
+@import "../components/popupLanguage";
+// end popup language
+
+// booking
+@import "../components/booking";
+// end booking
+
+// footer
+@import "../components/footer";
+// end footer
+
+* {
+  font-family: $font1;
+}
+
+body {
+  overflow-y: scroll;
+  background-color: $color1;
+  height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #dbdbdb;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+}
+
+a,
+span,
+p {
+  font-size: 14px;
+  line-height: 22px;
+  color: $color2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  padding: 10px 15px;
+  border: 1px solid #eeeeee;
+}
+
+img,
+button {
+  user-select: none;
+}
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+input {
+  line-height: normal;
+}
+label,
+button {
+  cursor: pointer;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+button{
+  border: none;
+  outline: none;
+}
+
+// button scroll top
+.wrapperButtonScrollTop {
+  position: fixed;
+  bottom: -100px;
+  right: 20px;
+  width: 50px;
+  padding-top: 50px;
+  transition: all 0.5s;
+  z-index: 99;
+  &.active {
+    bottom: 20px;
+  }
+}
+
+.buttonScrollTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: $color7;
+  overflow: hidden;
+  transition: all 0.5s;
+  svg {
+    width: 25px;
+    height: 25px;
+    color: $color3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover {
+    transform: scale(0.92);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .wrapperButtonScrollTop {
+    &.active {
+      bottom: 65px;
+    }
+  }
+  body {
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  .wrapperButtonScrollTop {
+    right: 8px;
+    &.active {
+      bottom: 58px;
+    }
+  }
+}
+// end button scroll top
+
+// title section
+.wrapperTitleSection {
+  position: relative;
+  .titleSection {
+    font-family: $font2;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 56px;
+    margin-bottom: 0;
+    color: $color3;
+    text-align: center;
+  }
+  .descriptionTitleSection {
+    font-size: 16px;
+    line-height: 22px;
+    color: $color8;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .wrapperTitleSection {
+    .titleSection {
+      font-size: 35px;
+      line-height: 43px;
+    }
+  }
+}
+@media (max-width: 575.98px) {
+  .wrapperTitleSection {
+    .titleSection {
+      font-size: 24px;
+      line-height: 30px;
+    }
+    .descriptionTitleSection {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+// end title section
+@layer components {
+  .button {
+    padding: 4px 20px;
+    display: inline-block;
+    border-radius: 8px !important;
+    border: none;
+    font-weight: 600;
+    transition: all linear 0.2s;
+    &Primary1{
+      background-color: $color3 !important;
+      color: $color1;
+      &:hover{
+        opacity: .75;
+      }
+    }
+    &Secondary{
+      background-color: transparent;
+      color: $color3;
+      border: 1px solid $color3 !important;
+      &:hover{
+        background-color: $color3 !important;
+        color: $color1;
+      }
+    }
+  }
+}
+
+// keyframes
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Mobile & tablet: width <1024px */
+@media only screen and (max-width: 1023px){
+  body{
+    height: auto;
+    overflow-y: auto;
+  }
+}

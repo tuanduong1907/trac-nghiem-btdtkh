@@ -1,0 +1,252 @@
+.wrapperBooking {
+    background-color: $color3;
+    padding: 5px 0;
+}
+.wrapperButtonShowBooking{
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 0;
+    transition: all .5s;
+    .buttonShowBooking{
+        display: block;
+        width: 100%;
+        color: $color1;
+        background-color: $color3;
+        text-decoration: none;
+        font-size: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 8px 0;
+    }
+}
+.contentBooking{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 991.98px){
+    .wrapperBooking{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $color12;
+        padding: 0;
+        z-index: 999;
+    }
+    .wrapperButtonShowBooking{
+        opacity: 1;
+        visibility: visible;
+        padding: 6px 0;
+        height: auto;
+    }
+    .contentBooking{
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px){
+    .wrapperButtonShowBooking{
+        .buttonShowBooking{
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 575.98px){
+    .wrapperButtonShowBooking{
+        .buttonShowBooking{
+            font-size: 12px;
+            padding: 4px 0;
+        }
+    }
+}
+
+
+.formBooking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 30px;
+    input,
+    select {
+        border: none;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.wrapperCheckInOut {
+    position: relative;
+}
+
+.textDatepicker {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: $color1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: $color8;
+        margin-right: 5px;
+    }
+    img {
+        width: 18px;
+        height: 18px;
+        transform: translateY(-1px);
+    }
+}
+
+.inputCheckInOut {
+    width: 185px;
+    height: 30px;
+}
+
+.wrapperSelectBooking {
+    position: relative;
+    margin-left: 5px;
+}
+
+.textSelectBooking {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color1;
+    text-align: center;
+    span {
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: $color8;
+    }
+}
+
+.seclectBooking {
+    width: 160px;
+    height: 30px;
+    text-align: left;
+    font-size: 12px;
+    font-family: $font1;
+    text-transform: uppercase;
+    padding: 0 20px;
+    option{
+        &:nth-child(1){
+            display: none;
+        }
+    }
+}
+
+
+
+.buttonSubmitBooking {
+    display: block;
+    margin-left: 5px;
+    width: 180px;
+    height: 30px;
+    border: none;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: $color8;
+    font-family: $font1;
+    background-color: $color1;
+}
+
+
+.ui-datepicker-calendar{
+    tbody, td, tfoot, th, thead, tr{
+        border: none !important;
+    }
+    .ui-state-default{
+        border: none;
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+
+.ui-datepicker-header{
+    border: none !important; 
+    background-color: $color1 !important;
+    a{
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        transition: all .2s;
+        &:hover{
+            border: none !important;
+            background-color: transparent !important;
+        }
+    }
+}
+
+.ui-datepicker-title{
+    background-color: $color3;
+    span{
+        color: $color1;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+}
+
+.ui-datepicker-prev span {
+    cursor: pointer;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    transform: rotate(45deg) scale(.6);
+    background-image: none !important;
+}
+
+.ui-datepicker-next span {
+    cursor: pointer;
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    transform: rotate(45deg) scale(.6);
+    background-image: none !important;}
+
+.ui-datepicker-calendar{
+    thead{
+        tr{
+            th{
+                span{
+                    font-size: 12px;
+                    font-weight: 300;
+                    color: $color3;
+                }
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+                a{
+                    font-size: 12px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    border: none !important;
+                    background-color: transparent !important;
+                    &:hover,
+                    &.ui-state-active{
+                        background-color: $color3 !important;
+                        color: $color1;
+                    }
+                }
+            }
+        }
+    }
+}

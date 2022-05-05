@@ -1,0 +1,283 @@
+mixin head_setting(data_page)
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(http-equiv='x-ua-compatible' content='ie=edge')
+    |
+    |
+    title= data_page.title_page +' | '+ data.general.title_website
+    |
+    |
+    link(rel='shortcut icon' type='image/png' href= data.general.url_favicon)
+    link(rel='icon' type='image/png' href= data.general.url_favicon)
+    |
+    |
+    meta(property='og:title' content= data_page.title_page +' | '+ data.general.title_website)
+    meta(name='description' content= data.general.description_website +', '+ data_page.description_page)
+    meta(name='keywords' content= data.general.keywords_website +', '+ data_page.keywords_page)
+    link(rel='image_src' type='image/jpg' href= data_page.url_image_page)
+    |
+    |
+    meta(property='og:url' content= data.general.url_website)
+    meta(property='og:type' content='website')
+    meta(property='og:description' content= data.general.description_website +', '+ data_page.description_page)
+    meta(property='og:image' content= data_page.url_image_page)
+    meta(property='og:image:alt' content= data_page.title_page +' | '+ data.general.title_website)
+    meta(property='og:type' content='website')
+    |
+    |
+    meta(name='twitter:title' content= data_page.title_page +' | '+ data.general.title_website)
+    meta(name='twitter:card' content= data_page.url_image_page)
+    meta(name='twitter:description' content= data.general.description_website +', '+ data_page.description_page)
+    meta(name='twitter:image' content= data_page.url_image_page)
+    |
+    |
+    meta(name='dc.created' content= data.general.created_website)
+    meta(name='dc.publisher' content= data.general.title_website)
+    meta(name='dc.rights.copyright' content= data.general.title_website)
+    meta(name='dc.creator.name' content= data.general.title_website)
+    |
+    |
+    meta(name='geo.position' content= data.general.position_website)
+    meta(name='geo.placename' content= data.general.placename_website)
+    meta(name='geo.country' content= data.general.country_website)
+    meta(name='geo.region' content= data.general.region_website)
+    |
+    |
+    meta(name='robots' content='noindex, follow')
+    meta(name='revisit-after' content='3 days')
+    meta(name='rating' content='general')
+    link(rel='alternate' href= data.general.url_website hreflang= data.general.hreflang_website)
+    link(href= data.general.url_website rel='canonical')
+    meta(name='copyright' content= data.general.title_website)
+    meta(name='author' content= data.general.title_website)
+    |
+    |
+    // CSS
+    each item in data_page.link_css_page
+        link(rel='stylesheet' type='text/css' href= 'css/'+ item +'.css')
+
+mixin render_svg(icon)
+    svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg', viewbox= icon.view)
+        path(fill='currentColor', d= icon.data)
+
+mixin render_link_js(data_page)
+    // JS
+    each item in data_page.link_js_page
+        script(src='js/'+ item +'.js')
+    // end JS
+
+mixin render_link_logo(data)
+    a.linkLogoHeader(href='index.html', title= data.general.title_website)
+        img.imgLogoHeader(src= data.header.logo, alt= data.general.title_website)
+
+mixin render_title(title_sub, title_main)
+    .wrapTitleItem 
+        p.titleSub.titleSubItem1= title_sub 
+        h2.titleMain.titleMainItem1 !{title_main}
+
+mixin render_title_2(title_sub, title_main)
+    .wrapTitleItem 
+        p.titleSub.titleSubItem1= title_sub 
+        h2.titleMain.titleMainItem2 !{title_main}
+
+mixin menu_main(data_menu, loop)
+    .wrapMenuHeader
+        if(loop == 0)
+            .logoScrollDS   
+                a.linkItem(href='index.html' title= data.general.title_website)
+                    img(data-img='images/logo/comodo-hotel-logo.png' alt= data.general.title_website)
+
+        ul.listMenuHeader
+            each item in data_menu
+                - var check_scroll = item.scroll;
+
+                if item.children
+                    li.itemMenuHeader.menuSub
+                        a.linkMenuHeader(href= item.link, title= item.title, class=check_scroll ? 'scroll' : '')
+                            img(src= item.icon).linkMenuHeaderImg
+                            = item.title
+
+                        a.btnDropdownMenuSub(href='javascript:void(0);' title='Dropdown')
+                            svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 320 512')
+                                path(fill='currentColor' d='M151.5 347.8L3.5 201c-4.7-4.7-4.7-12.3 0-17l19.8-19.8c4.7-4.7 12.3-4.7 17 0L160 282.7l119.7-118.5c4.7-4.7 12.3-4.7 17 0l19.8 19.8c4.7 4.7 4.7 12.3 0 17l-148 146.8c-4.7 4.7-12.3 4.7-17 0z')
+
+                        +menu_main(item.children, 1)
+                else
+                    li.itemMenuHeader
+                        a.linkMenuHeader(href= item.link, title= item.title, class=check_scroll ? 'scroll' : '')
+                            img(src= item.icon).linkMenuHeaderImg
+                            = item.title
+
+mixin render_paging(quantily = 5)
+    - var number_paging = 0;
+
+    .clearfix.wrapPaggingList
+        a.linkPagging.prev(href='#' title='Previus')
+            span
+                svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 256 512')
+                    path(fill='currentColor' d='M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z')
+
+        while number_paging < quantily
+            a.linkPagging(href='javascript:void(0);' class= number_paging == 0 ? 'active' : '')
+                if number_paging++ < 9
+                    span= '0'+ number_paging
+                else
+                    span= number_paging
+
+        a.linkPagging.next(href='#' title='Next')
+            span
+                svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 256 512')
+                    path(fill='currentColor' d='M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z')
+
+mixin render_breadcrumb(data)
+    // breadcrumb
+    .wrapBreadcrumb
+        .wrapImgItem
+            .overlay
+            .wrapImgResize
+                img(src= data.breadcrumb.url_img alt= data.title_page)
+
+        .contentText
+            .container-xl
+                .clearfix.contentItem
+                    .wrapTitleMain
+                        h1.titleMainItem5.titleItem= data.title_page
+
+                    .clearfix.wrapMenu
+                        a.linkItem(href='index.html' title='Trang chủ')
+                            | Home
+                            svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 192 512')
+                                path(fill='currentColor' d='M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z')
+
+                        each item in data.breadcrumb.menu
+                            a.linkItem(href= item.link title= item.title)
+                                = item.title
+                                svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 192 512')
+                                    path(fill='currentColor' d='M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z')
+
+                        a.linkItem(href='javascript:void(0);' title= data.title_page)
+                            = data.title_page
+                            svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 192 512')
+                                path(fill='currentColor' d='M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z')
+    // end breadcrumb
+mixin render_itemNews(data)
+    // itemNews
+    section.newsListWrapper.container
+        ul.newsList
+            each item in data
+                li.newsItem 
+                    a(href= item.link title= item.title).newsItemImage
+                        img(src= item.images, alt= item.title)
+                    .newItemContent
+                        if  item.author
+                            .newsItemAuthor 
+                                | By 
+                                = item.date
+                                span /
+                                = item.author
+                        a(href= item.link).newsItemTitleLink
+                            h2.newsItemTitle= item.title
+                        p.newsItemText= item.sumary
+                        a.newsItemMore(href= item.link) Read More 
+    // end itemNews
+
+mixin render_news_item_special(item_list)
+    each item in item_list
+        h3.titleItem
+            a.linkTitleItem2.linkTitleItem(href= item.link title= item.title)
+                svg( fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
+                    path(d="M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z")
+                = item.title
+
+mixin render_rooms_item_special(item_list)
+    each item in item_list
+        h3.titleItem
+            a.linkTitleItem2.linkTitleItem(href= item.link title= item.title)
+                svg( fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512")
+                    path(d="M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z")
+                = item.title
+
+mixin render_share()
+    .group-btn-share
+        .addthis_inline_share_toolbox_zzcx
+    script(type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a70308bcd2de91e')
+
+mixin news_list_right(title, class_name, item_list)
+    .itemPost(class= class_name)
+        h2.titleItem4.titleMainItem= title
+
+        .listItem.clearfix
+            case class_name
+                when 'other'
+                    +render_updated_news(item_list)
+
+                when 'item'
+                    +render_news_item_special(item_list)
+
+mixin room_list_right(title, class_name, item_list)
+    .itemPost(class= class_name)
+        h2.titleItem4.titleMainItem= title
+
+        .listItem.clearfix
+            case class_name
+                when 'other'
+                    +render_updated_rooms(item_list)
+
+                when 'item'
+                    +render_rooms_item_special(item_list)
+
+mixin render_updated_news(item_list)
+    each item in item_list
+        +render_news_element_small(item)
+        
+mixin render_news_element_small(item)
+    .media
+        .wrapImg
+            a.wrapImgResize.img16And9(href= item.link title= item.title)
+                img(src= item.url_img alt= item.title)
+        .media-body
+            h3.titleItem
+                a.linkTitleItem2.linkTitleItem(href= item.link title= item.title)= item.title
+            p.date
+                svg(aria-hidden='true' focusable='false' role='img' xmlns='http://www.w3.org/2000/svg' viewbox='0 0 448 512')
+                    path(fill='currentColor' d='M400 64h-48V12c0-6.6-5.4-12-12-12h-8c-6.6 0-12 5.4-12 12v52H128V12c0-6.6-5.4-12-12-12h-8c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM48 96h352c8.8 0 16 7.2 16 16v48H32v-48c0-8.8 7.2-16 16-16zm352 384H48c-8.8 0-16-7.2-16-16V192h384v272c0 8.8-7.2 16-16 16zM148 320h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm96 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm96 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm-96 96h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm-96 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm192 0h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12z')
+                | 20/09/2021
+
+mixin render_updated_rooms(item_list)
+    each item in item_list
+        +render_rooms_element_small(item)
+        
+mixin render_rooms_element_small(item)
+    .media
+        .wrapImg
+            a.wrapImgResize.img16And9(href= item.link title= item.title)
+                img(src= item.url_img alt= item.title)
+        .media-body
+            h3.titleItem
+                a.linkTitleItem2.linkTitleItem(href= item.link title= item.title)= item.title
+            p.date
+                svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512")
+                    path(fill="currentColor" d="M512 64C547.3 64 576 92.65 576 128V384C576 419.3 547.3 448 512 448H64C28.65 448 0 419.3 0 384V128C0 92.65 28.65 64 64 64H512zM128 384C128 348.7 99.35 320 64 320V384H128zM64 192C99.35 192 128 163.3 128 128H64V192zM512 384V320C476.7 320 448 348.7 448 384H512zM512 128H448C448 163.3 476.7 192 512 192V128zM288 352C341 352 384 309 384 256C384 202.1 341 160 288 160C234.1 160 192 202.1 192 256C192 309 234.1 352 288 352z")
+                = item.price + ' ' + item.currency
+
+mixin render_tripAdvisor_traveler()
+    .wrapperBottomWelcome.row
+        .elementBottomWelcome.col-lg-6
+            .wrapperBenefitWelcome.row
+                .elementBenefitWelcome.col-md-4
+                    img.imageBenefitWelcome(src='images/icon/city-center.png' alt='icon benefit')
+                    span.textBenefitWelcome City center location
+                .elementBenefitWelcome.col-md-4
+                    img.imageBenefitWelcome(src='images/icon/luxury.png' alt='icon benefit')
+                    span.textBenefitWelcome New dimension of luxury
+                .elementBenefitWelcome.col-md-4
+                    img.imageBenefitWelcome(src='images/icon/personalize.png' alt='icon benefit')
+                    span.textBenefitWelcome Personalized service
+        .elementBottomWelcome.col-lg-4
+            .wrapperRatting
+                p
+                    strong TripAdvisor Traveler Rating:
+                img.logoRatting(src='images/logo/logo_trip.png' alt='logo Tripadvisor')
+                p
+                    | Based on more 4,000 traveler reviews
+                a(href='javascript:void(0);' title='Comment in Tripadvisor') Read Review

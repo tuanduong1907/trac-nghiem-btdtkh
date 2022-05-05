@@ -1,0 +1,55 @@
+@import '../abstracts/variables';
+
+@font-face{
+    font-family: $font1;
+    src: url(../fonts/#{$font1}-Light.ttf);
+    font-weight: 300;
+}
+@font-face{
+    font-family: $font1;
+    src: url(../fonts/#{$font1}-Regular.ttf);
+    font-weight: 400;
+}
+@font-face{
+    font-family: $font1;
+    src: url(../fonts/#{$font1}-Medium.ttf);
+    font-weight: 500;
+}
+@font-face{
+    font-family: $font1;
+    src: url(../fonts/#{$font1}-SemiBold.ttf);
+    font-weight: 600;
+}
+@font-face{
+    font-family: $font1;
+    src: url(../fonts/#{$font1}-Bold.ttf);
+    font-weight: 700;
+}
+
+
+
+@font-face{
+    font-family: $font2;
+    src: url(../fonts/#{$font2}-Regular.ttf);
+    font-weight: 400;
+}
+@font-face{
+    font-family: $font2;
+    src: url(../fonts/#{$font2}-Medium.ttf);
+    font-weight: 500;
+}
+@font-face{
+    font-family: $font2;
+    src: url(../fonts/#{$font2}-SemiBold.ttf);
+    font-weight: 600;
+}
+@font-face{
+    font-family: $font2;
+    src: url(../fonts/#{$font2}-Bold.ttf);
+    font-weight: 700;
+}
+
+
+body{
+    font-family: $font1;
+}

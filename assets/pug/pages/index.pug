@@ -1,0 +1,44 @@
+include ../mixin/mixin
+
+- var data_page = data.page_home
+
+doctype html
+html(lang='vi')
+    head
+        +head_setting(data_page)
+    body
+        include ../layout/general/header
+        |
+        |
+        .wrapMain
+            include ../layout/home/Main
+            //- |
+            //- |
+            //- include ../layout/home/Booking
+            //- |
+            //- |
+            //- include ../layout/home/Welcome
+            //- |
+            //- |
+            //- include ../layout/home/Heading
+            //- |
+            //- |
+            //- include ../layout/home/Room
+            //- |
+            //- |
+            //- include ../layout/home/Special
+            //- |
+            //- |
+            //- include ../layout/home/Discover
+            //- |
+            //- |
+            //- include ../layout/home/Moment
+        |
+        |
+        include ../layout/general/footer
+        |
+        |
+        //- include ../layout/home/LinkSocial
+        |
+        |
+        //- include ../layout/home/ButtonScroll

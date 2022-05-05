@@ -1,0 +1,55 @@
+.wrapperListLinkSocialFixed{
+    position: fixed;
+    bottom: 120px;
+    right: -100px;
+    transition: all .5s;
+    z-index: 999;
+    &.active{
+        right: 20px;
+    }
+}
+.itemSocialFixed{
+    margin-bottom: 10px;
+}
+
+.linkSocialFixed{
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    transition: all .5s;
+    img{
+        width: 50px;
+        height: 50px;
+    }
+    svg{
+        width: 50px;
+        height: 50px;
+    }
+    &.call{
+        width: 50px;
+        padding-top: 50px;
+        background-color: $color3;
+    }
+    .iconCall{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        color: $color1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover{
+        transform: scale(.92);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .wrapperListLinkSocialFixed{
+        bottom: 108px;
+        &.active{
+            right: 8px;
+        }
+    }
+}

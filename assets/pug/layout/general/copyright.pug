@@ -1,0 +1,17 @@
+// copyright
+.wrapCopyright.clearfix
+    .container-xl.containerItem
+        .contentItem
+            .contentLeft
+                .titleCopyright
+                    p © 2022 Comodo <b style="color: #ffc107;">Nha Trang</b> Hotel
+                |
+                |
+                .titleDeveloper
+                    p Designed and developed by <a href="https://www.sweetsoft.vn/" title="Web design,Nha Trang,Software,compnay,web designer,IT,information technology">SweetSoft JSC</a>
+
+            .contentRight
+                .menuItem
+                    each item in data.footer.menu
+                        a.linkItem(href= item.link title= item.title)= item.title
+// end copyright

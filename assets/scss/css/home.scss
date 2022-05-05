@@ -1,0 +1,356 @@
+// variables
+@import "../abstracts/variables";
+// end variables
+
+// mixins
+@import "../abstracts/mixins";
+// end mixins
+.questionWrap {
+  display: flex;
+  margin-block: 20px;
+  gap: 40px;
+  background-color: $color9;
+  padding: 40px;
+  width: calc(100% - 40px);
+  border-radius: 12px;
+  margin-bottom: 60px;
+  .questionMainWrap {
+    position: relative;
+    flex: 3;
+    background-color: $color1;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: relative;
+    .questionMain {
+      height: calc(100vh - 500px);
+      overflow-y: auto;
+      .questionHeading {
+        position: absolute;
+        top: -25px;
+        left: 40px;
+        background-color: $color3;
+        color: $color1;
+        padding: 8px 20px;
+        border-radius: 12px;
+        font-weight: 600;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        user-select: none;
+        text-transform: capitalize;
+      }
+      .questionContent {
+        @include text18;
+        font-weight: 600;
+        padding: 8px 20px;
+        background-color: $color5;
+        border-radius: 12px;
+        margin-top: 20px;
+        user-select: none;
+      }
+      .answerList {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .answerItem {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          cursor: pointer;
+          user-select: none;
+          &:hover {
+            .optAnswer,
+            .answerContent {
+              // background-color: rgba(29, 78, 216, 0.1);
+              background-color: rgba(116, 21, 32, 0.1);
+            }
+          }
+          .optAnswer {
+            @include text18;
+            width: 40px;
+            height: 40px;
+            border-radius: 100rem;
+            background-color: $color9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s linear;
+          }
+          .answerContent {
+            @include text18;
+            width: 100%;
+            padding: 8px 20px;
+            border-radius: 12px;
+            background-color: $color9;
+            transition: all 0.2s linear;
+          }
+        }
+        .answerItemActive {
+          .optAnswer,
+          .answerContent {
+            background-color: $color3 !important;
+            color: $color1 !important;
+          }
+        }
+      }
+    }
+    .questionNavigation {
+      display: flex;
+      gap: 0 12px;
+      justify-content: space-between;
+      .questionBtn {
+        gap: 0 12px;
+        border-radius: 100rem;
+        width: 130px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 12px;
+        font-weight: 500;
+        text-transform: capitalize;
+        background-color: $color3;
+        color: $color1;
+        transition: all 0.2s linear;
+        @include text16;
+        svg {
+          height: 14px;
+          fill: $color1;
+        }
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .questionFooter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      flex-direction: column;
+      gap: 20px;
+      .progress {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        .progress-bar {
+          background-color: $color3;
+        }
+      }
+    }
+  }
+  .questionSubWrap {
+    flex: 1;
+    background-color: $color1;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 12px;
+    padding: 40px;
+    .questionListWrap {
+      display: flex;
+      justify-content: space-between;
+      .questionList {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .questionItem {
+          display: flex;
+
+          cursor: pointer;
+          .textValSelected,
+          .titleItemQuestion {
+            border: 1px solid $color8;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .titleItemQuestion {
+            font-weight: 600;
+          }
+          .textValSelected {
+            border-left: 0;
+          }
+        }
+      }
+    }
+    .questionCountdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      svg{
+        display: none;
+      }
+      .textNumberCount {
+        @include text48;
+        font-weight: 600;
+        color: $color3;
+      }
+    }
+    .questionBtnWrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 40px;
+    }
+  }
+}
+
+/* Mobile & tablet: width <1024px */
+@media only screen and (max-width: 1023px) {
+  .questionWrap {
+    flex-direction: column;
+    .questionMainWrap {
+      .questionMain {
+        height: auto;
+        .questionHeading {
+          @include text14;
+          top: -14px;
+        }
+        .questionContent {
+          @include text14;
+        }
+        .answerList {
+          .answerItem {
+            .optAnswer,
+            .answerContent {
+              @include text14;
+            }
+          }
+        }
+      }
+      .questionNavigation {
+        .questionBtn {
+          @include text14;
+          gap: 0 4px;
+          width: 110px;
+        }
+      }
+    }
+    .questionSubWrap {
+      .questionCountdown {
+        margin-top: 0;
+        position: fixed;
+        bottom: 60px;
+        right: 8px;
+        padding: 8px 20px;
+        background-color: $color6;
+        border-radius: 8px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        svg{
+          display: block;
+          fill: $color1;
+          height: 20px;
+        }
+        .textNumberCount {
+          @include text24;
+          color: $color1;
+        }
+      }
+      .questionBtn {
+        @include text14;
+      }
+    }
+  }
+}
+
+/* Mobie: width < 740px */
+@media only screen and (max-width: 739px) {
+  .questionWrap {
+    padding: 0;
+    background-color: $color1;
+    gap: 15px;
+    margin-top: 29px;
+    .questionMainWrap {
+      padding: 15px;
+      .questionNavigation {
+        margin-top: 15px;
+      }
+      .questionFooter {
+        margin-top: 30px;
+      }
+    }
+    .questionSubWrap {
+      padding: 15px;
+      .questionListWrap {
+        justify-content: center;
+        gap: 30px;
+        .questionList {
+          .questionItem {
+            .titleItemQuestion,
+            .textValSelected {
+              width: 28px;
+              height: 28px;
+            }
+          }
+        }
+      }
+      .questionBtnWrap {
+        margin-top: 30px;
+      }
+      .questionCountdown {
+        padding-inline: 8px;
+        .textNumberCount {
+          @include text16;
+        }
+        svg{
+          height: 16px;
+        }
+      }
+    }
+  }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+  .questionWrap {
+    padding: 20px;
+    gap: 20px;
+    .questionMainWrap {
+      padding: 20px;
+      .questionNavigation {
+        margin-top: 20px;
+      }
+    }
+    .questionSubWrap {
+      padding: 20px;
+      .questionListWrap {
+        justify-content: center;
+        gap: 0 40px;
+      }
+    }
+  }
+}
+
+/* PC Low */
+@media (min-width: 1024px) and (max-width: 1239px) {
+  .questionWrap {
+    .questionMainWrap {
+      .questionMain {
+        height: auto;
+      }
+    }
+    .questionSubWrap{
+      .questionListWrap{
+        gap: 0 20px;
+      }
+    }
+  }
+}
+
+/* PC: width >= 1024px */
+@media only screen and (min-width: 1024px) {
+  .questionWrap {
+    .questionSubWrap{
+      .questionListWrap{
+        gap: 0 20px;
+      }
+    }
+  }
+}

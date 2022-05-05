@@ -1,0 +1,105 @@
+//photo library list
+
+//- section.libraryWrapper.container 
+//-     ul.libraryList 
+//-         each item in data.page_photoLibrary.photos_list
+//-             li.libraryItem
+//-                 a(href= item.link) 
+//-                     .overlay   
+//-                 a(href= item.link).libraryItemImagesLink.wrapImgResize.img16And9
+//-                     img(src= item.images, alt= item.title)
+//-                 .libraryTitleWrapper
+//-                     h2.libraryTitle
+//-                         a(href= item.link)=  item.title
+//-                         a(href= item.link).libraryTitleMore Detail
+
+section.libraryWrapper.container 
+    +render_tripAdvisor_traveler()
+    .photoTabListHeader 
+        .libraryTabItem.active(data-tab= '1') All
+        .libraryTabItem(data-tab='2') Overview
+        .libraryTabItem(data-tab='3') Room
+        .libraryTabItem(data-tab='4') Recreation
+        .libraryTabItem(data-tab='5') Dinning
+        .libraryTabItem(data-tab='6') Meetings & Events
+    .photoTabListBody
+        ul.photoList.active(data-tab= "1")
+            .wrapDiscover.wrapImgDetail
+                .container-xl
+                    .contentItem
+                        .listItem
+                            .row.rowList.row3.showGalleryImgDetail
+                                each item in data.rooms
+                                    .colItem(data-src= item.images)
+                                        .contentItem
+                                            .wrapImg.wrapImagePhoto
+                                                .overlayImage
+                                                a.wrapImgResize.img16And9.imagePhoto(href='javascript:void(0);', title= item.title)
+                                                    img(src= item.images)
+        ul.photoList(data-tab= "2")
+            .wrapDiscover.wrapImgDetail
+                .container-xl
+                    .contentItem
+                        .listItem
+                            .row.rowList.row3.showGalleryImgDetail
+                                each item in data.slide_main
+                                    .colItem(data-src= item.url_img)
+                                        .contentItem
+                                            .wrapImg.wrapImagePhoto
+                                                .overlayImage
+                                                a.wrapImgResize.img16And9.imagePhoto(href='javascript:void(0);')
+                                                    img(src= item.url_img)
+        ul.photoList(data-tab= "3")
+            .wrapDiscover.wrapImgDetail
+                .container-xl
+                    .contentItem
+                        .listItem
+                            .row.rowList.row3.showGalleryImgDetail
+                                each item in data.rooms
+                                    .colItem(data-src= item.images)
+                                        .contentItem
+                                            .wrapImg.wrapImagePhoto
+                                                .overlayImage
+                                                a.wrapImgResize.img16And9.imagePhoto(href='javascript:void(0);', title= item.title)
+                                                    img(src= item.images)
+        ul.photoList(data-tab= "4")
+            .wrapDiscover.wrapImgDetail
+                .container-xl
+                    .contentItem
+                        .listItem
+                            .row.rowList.row3.showGalleryImgDetail
+                                each item in data.special_offers
+                                    .colItem(data-src= item.images)
+                                        .contentItem
+                                            .wrapImg.wrapImagePhoto
+                                                .overlayImage
+                                                a.wrapImgResize.img16And9.imagePhoto(href='javascript:void(0);', title= item.title)
+                                                    img(src= item.images)
+        ul.photoList(data-tab= "5")
+            .wrapDiscover.wrapImgDetail
+                .container-xl
+                    .contentItem
+                        .listItem
+                            .row.rowList.row3.showGalleryImgDetail
+                                each item in data.rooms
+                                    .colItem(data-src= item.images)
+                                        .contentItem
+                                            .wrapImg.wrapImagePhoto
+                                                .overlayImage
+                                                a.wrapImgResize.img16And9.imagePhoto(href='javascript:void(0);', title= item.title)
+                                                    img(src= item.images)
+        ul.photoList(data-tab= "6")
+            .wrapDiscover.wrapImgDetail
+                .container-xl
+                    .contentItem
+                        .listItem
+                            .row.rowList.row3.showGalleryImgDetail
+                                each item in data.rooms
+                                    .colItem(data-src= item.images)
+                                        .contentItem
+                                            .wrapImg.wrapImagePhoto
+                                                .overlayImage
+                                                a.wrapImgResize.img16And9.imagePhoto(href='javascript:void(0);', title= item.title)
+                                                    img(src= item.images)
+
+//end photo library list

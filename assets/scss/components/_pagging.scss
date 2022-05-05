@@ -1,0 +1,27 @@
+.pagingWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    .pagingList{
+        display: flex;
+        gap: 12px;
+        .pagingItem{
+            .pagingLink{
+                padding: 4px 8px;
+                border: 1px solid $color3;
+                color: $color3;
+                font-weight: 500;
+                transition: all 0.1s linear;
+                &:hover{
+                    background-color: $color3;
+                    color: $color1;
+                }
+                &.pagingLinkActive{
+                    background-color: $color3;
+                    color: $color1;
+                }
+            }
+        }
+    }
+}

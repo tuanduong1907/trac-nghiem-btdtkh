@@ -1,0 +1,71 @@
+// bottom welcome 
+.wrapperBottomWelcome{
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.wrapperBenefitWelcome {
+    padding: 10px 0 24px;
+    border-top: 1px solid $color5;
+    border-bottom: 1px solid $color5;
+}
+.elementBenefitWelcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14px;
+    .imageBenefitWelcome{
+        width: 24px;
+        height: 24px;
+        margin: 10px 16px 10px 0;
+    }
+    .textBenefitWelcome{
+        width: 122px;
+        font-size: 14px;
+        line-height: 20px;
+        color: $color8;
+    }
+}
+
+.wrapperRatting{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+        max-width: 305px;
+        height: 30px;
+        margin-bottom: 5px;
+    }
+    p{
+        font-size: 14px;
+        line-height: 20px;
+        color: $color8;
+        margin-bottom: 5px;
+    }
+    a{
+        font-size: 14px;
+        line-height: 20px;
+        color: $color3;
+        text-decoration: none;
+        transition: all .5s;
+        &:hover{
+            color: $color4;
+        }
+    }
+}
+
+@media (max-width: 767.98px){
+    .wrapperBenefitWelcome {
+        padding: 10px 0 20px;
+        margin-bottom: 15px;
+    }
+    .elementBenefitWelcome{
+        margin-top: 10px;
+    }
+    .wrapperBottomWelcome{
+        margin-bottom: 15px;
+    }
+}
+// end bottom welcome 

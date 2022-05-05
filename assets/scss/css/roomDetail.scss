@@ -1,0 +1,693 @@
+// variables
+@import "../abstracts/variables";
+// end variables
+
+// mixins
+@import "../abstracts/mixins";
+// end mixin
+
+// end main slide
+
+// @import "../layouts/breadcrumb";
+
+@import "../components/button";
+
+@import "../vendors/slick";
+
+// @import "../components/wrapImgResize";
+
+
+
+.btnSlideType1 {
+  position: absolute;
+  top: 50%;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  z-index: 2;
+  @include transition(0.5s);
+  display: inline-block;
+  text-align: center;
+  @include translate(0, -50%);
+  @include transition(0.5s);
+  color: $color1;
+
+  svg {
+    width: 16px;
+    height: 30px;
+    display: block;
+  }
+
+  &.left {
+    left: 15px;
+  }
+
+  &.right {
+    right: 15px;
+  }
+
+  &:hover {
+    color: $color3;
+    opacity: 1;
+  }
+}
+.roomDetailWrapper {
+  // display: flex;
+  margin-top: 40px;
+  .rowItem {
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  .roomDetailRelatedTitle {
+    margin-bottom: 15px;
+    font-family: $font2;
+    color: $color3;
+    @include text36;
+    &::after {
+      display: block;
+      content: "";
+      height: 2px;
+      width: 80px;
+      background-color: $color3;
+    }
+  }
+  .wrapSlideMainImg {
+    position: relative;
+    &.wrapSlideMainImgRoom {
+      width: calc(100% - 200px);
+    }
+    margin-left: auto;
+    .btnSlide {
+      // background-color: $color3;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      opacity: 0.7;
+
+      // &:hover {
+      //   background-color: $color1;
+      // }
+
+      svg {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+      }
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+    }
+    .descTableWrapper {
+      padding: 24px;
+      width: 320px;
+      left: -20%;
+      background-color: $color9;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      .descTableTitle {
+        @include text20;
+        margin-bottom: 15px;
+      }
+      .descTableContent {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+      .descTableServiceList {
+        .descTableServiceItem {
+          margin-bottom: 8px;
+          display: flex;
+          align-items: center;
+          svg {
+            height: 16px;
+            margin-right: 8px;
+          }
+          span {
+            @include text14;
+          }
+        }
+      }
+    }
+  }
+
+  .wrapSlideCtrlImg {
+    &.wrapSlideCtrlImgRoom {
+      width: calc(100% - 200px);
+    }
+    margin-left: auto;
+    .itemSlide {
+      width: 100%;
+      .wrapImgResize {
+        cursor: pointer;
+        height: 55px;
+        width: 100%;
+        img {
+          @include opacity(0.4);
+          @include transition(0.5s);
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      &.slick-center {
+        .wrapImgResize {
+          img {
+            @include opacity(1);
+          }
+        }
+      }
+
+      &:hover {
+        .wrapImgResize {
+          img {
+            @include opacity(1);
+          }
+        }
+      }
+    }
+  }
+
+  .titleInfoDetail {
+    margin-top: 30px;
+    color: $color2;
+
+    &::after {
+      background-color: $color3;
+    }
+  }
+
+  .wrapTextDetail {
+    p {
+      margin: 15px 0 0 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: $color3;
+      @include transition(0.5s);
+      text-decoration: underline;
+
+      &:hover {
+        color: $color15;
+      }
+    }
+  }
+
+  .stopMoveSlide {
+    .slick-track {
+      left: 0 !important;
+      display: table;
+      margin: auto;
+      top: 0 !important;
+      @include transform(unset !important);
+      @include transform(none !important);
+    }
+  }
+  .roomDetailSlideImages {
+    width: 100%;
+    .wrapSlideCtrlImg {
+      .contentImg {
+        padding: 2px 1px;
+      }
+    }
+
+    .wrapSlideMainImg {
+      cursor: pointer;
+    }
+  }
+
+  .slick-slide {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .roomDetailTitleWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 15px;
+    &.roomDetailTitleWrapperRoom {
+      width: calc(100% - 200px);
+    }
+    margin-left: auto;
+    .roomDetailTitle {
+      @include text30;
+      color: $color3;
+      font-family: $font2;
+    }
+    .roomDetailPirce {
+      background-color: $color4;
+      color: $color1;
+      font-weight: 600;
+      user-select: none;
+      cursor: default;
+    }
+    .wrapperPriceRoomDetail {
+      padding: 0;
+      .priceRoom {
+        &:last-child {
+          font-weight: 500;
+          font-size: 26px;
+          line-height: 34px;
+        }
+      }
+    }
+  }
+  .roomDetailContentWrapper {
+    display: flex;
+    margin-top: 20px;
+    gap: 0 30px;
+    .roomDetailContentItem {
+      &:first-child {
+        width: 70%;
+      }
+      &:last-child {
+        flex: 1;
+      }
+      .roomDetailDesc {
+        @include text48;
+        text-align: center;
+        font-family: $font2;
+        color: $color3;
+      }
+      .roomDetailSubDesc {
+        @include text24;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .roomDetailDescText {
+        @include text14;
+        margin-bottom: 20px;
+      }
+      .roomDetalFacilitiesWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-bottom: 20px;
+        .roomDetalFacilitiesList {
+          flex: 1;
+          .roomDetalFacilitiesItem {
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 10px;
+            gap: 0 8px;
+            display: flex;
+            align-items: center;
+            svg {
+              height: 6px;
+              fill: $color3;
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+      .roomDetailInfo {
+        padding: 20px;
+        background-color: $color1;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        .roomDetailInfoList {
+          .roomDetailInfoItem {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            p {
+              margin-bottom: 0;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      .roomDetalContact {
+        margin-top: 30px;
+        .roomDetalContactTitle {
+          font-size: 18px;
+          line-height: 28px;
+          font-weight: 600;
+        }
+        .roomDetalContactList {
+          .roomDetalContactItem {
+            font-size: 14px;
+            line-height: 20px;
+            span {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+  .wrapperRoom {
+    margin-top: 20px !important;
+  }
+}
+
+// Slide
+.slick-slide img {
+  width: 100%;
+}
+.wrapSlideCtrlImg {
+  .showSlideCtrlImg {
+    .slick-active {
+      .slick-current {
+        opacity: 0.7 !important;
+        transition: all linear 0.2s;
+      }
+    }
+  }
+}
+
+.wrapperRoom {
+  margin-top: 40px;
+}
+
+.wrapperDescriptionRoom {
+  padding-top: 20px;
+  .descriptionRoom {
+    font-size: 16px;
+    line-height: 22px;
+    color: $color8;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+}
+
+.roomRelatedList {
+  margin-bottom: 40px;
+  .roomRelatedItem {
+    margin-bottom: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    &:hover {
+      .roomDetailRelatedImg {
+        transform: scale(1.1);
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .roomDetailRelatedImages {
+      overflow: hidden;
+      .roomDetailRelatedImg {
+        transition: all linear 0.25s;
+      }
+    }
+    .roomDetailRelatedInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .roomRelatedInfoTitle {
+        margin-bottom: 0;
+        &:hover {
+          color: $color3;
+        }
+        a {
+          font-size: 20px;
+          line-height: 28px;
+        }
+      }
+      .roomRelatedPrice {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        .roomRelatedPriceOld {
+          font-size: 10px;
+          color: $color11;
+          position: relative;
+          &::after {
+            content: " ";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 100%;
+            border-top: 12px solid;
+            border-top-width: 1px;
+            transform: rotate(-6deg) translateY(-50%);
+          }
+        }
+        .roomRelatedPriceCurrent {
+          font-weight: 600;
+          color: $color13;
+        }
+      }
+    }
+  }
+}
+.wrapShare {
+  margin-bottom: 40px;
+}
+
+// Responsive
+@media (max-width: 991.98px) {
+  .wrapperDescriptionRoom {
+    .descriptionRoom {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .wrapperPriceRoom {
+    padding-top: 15px;
+  }
+
+  .wrapperButtonRoom {
+    padding-top: 15px;
+  }
+  .wrapperRoom {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .wrapperNameRoom {
+    min-height: 80px;
+    margin-top: -40px;
+    .nameRoom {
+      .linkNameRoom {
+        font-size: 18px;
+        line-height: 24px;
+        display: block;
+      }
+    }
+  }
+  .wrapperTextRoom {
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .wrapperPriceRoom {
+    .priceRoom {
+      font-size: 16px;
+      line-height: 24px;
+      &.haveDiscount {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+  .wrapperButtonRoom {
+    .buttonPrimary {
+      font-size: 12px;
+      padding: 15px 25px;
+    }
+    .buttonPrimary-outline {
+      font-size: 12px;
+      padding: 14px 24px;
+    }
+  }
+}
+/* Mobile & tablet: width <1024px */
+@media only screen and (max-width: 1023px) {
+  .roomDetailWrapper {
+    .rowItem {
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .roomDetailContentWrapper {
+      .roomDetailContentItem {
+        .roomDetalFacilitiesWrapper {
+          display: block;
+          .roomDetalFacilitiesList {
+            .roomDetalFacilitiesTitle {
+              @include text16;
+            }
+            .roomDetalFacilitiesItem {
+              span {
+                @include text12;
+              }
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .wrapSlideMainImg {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 20px;
+      width: 100%;
+      .descTableWrapper {
+        position: static;
+        transform: translateY(0);
+        width: 100%;
+        padding: 15px 15px 7px;
+        .descTableTitle {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .wrapSlideMainImg{
+      &.wrapSlideMainImgRoom{
+        width: 100%;
+      }
+    }
+    .wrapSlideCtrlImg {
+      &.wrapSlideCtrlImgRoom{
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Mobie: width < 740px */
+@media only screen and (max-width: 739px) {
+  .roomDetailWrapper {
+    margin-top: 30px;
+    .rowItem {
+      gap: 0;
+    }
+    .roomDetailTitleWrapper {
+      width: 100%;
+      .roomDetailTitle {
+        font-size: 18px;
+        line-height: 28px;
+      }
+      .wrapperPriceRoomDetail {
+        .priceRoom {
+          &:last-child {
+            font-size: 18px;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+    .roomDetailContentWrapper {
+      flex-direction: column;
+      margin-top: 15px;
+      .roomDetailContentItem {
+        &:first-child {
+          width: 100%;
+        }
+        .roomDetalContact,
+        .roomDetailInfo {
+          margin-top: 15px;
+        }
+        .roomDetailDescWrapper {
+          .roomDetailDesc {
+            @include text36;
+          }
+          .roomDetailSubDesc {
+            @include text18;
+            margin-block: 15px;
+          }
+          .roomDetailDescText {
+            @include text12;
+            margin-bottom: 15px;
+          }
+        }
+        .roomDetalFacilitiesWrapper {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .wrapShare {
+      margin-block: 15px;
+    }
+    .roomDetailRelatedTitle {
+      @include text24;
+    }
+  }
+  .roomRelatedList {
+    .roomRelatedItem {
+      .roomDetailRelatedInfo {
+        .roomRelatedPrice {
+          .roomRelatedPriceOld {
+            font-size: 8px;
+            line-height: 12px;
+          }
+          .roomRelatedPriceCurrent {
+            font-size: 14px;
+            line-height: 16px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+  .roomDetailWrapper {
+    .roomDetailContentWrapper {
+      margin-bottom: 15px;
+      .roomDetailContentItem {
+        &:first-child {
+          width: 60%;
+        }
+        .roomDetalFacilitiesWrapper {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .listRoom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+  .roomRelatedList {
+    .roomRelatedItem {
+      .roomDetailRelatedInfo {
+        .roomRelatedInfoTitle {
+          a {
+            font-size: 28px;
+            line-height: 34px;
+          }
+        }
+        .roomRelatedPrice {
+          margin-top: 15px;
+          .roomRelatedPriceOld {
+            font-size: 14px;
+            line-height: 20px;
+          }
+          .roomRelatedPriceCurrent {
+            font-size: 18px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* PC Low */
+@media (min-width: 1024px) and (max-width: 1239px) {
+}
+
+/* PC: width >= 1024px */
+@media only screen and (min-width: 1024px) {
+}

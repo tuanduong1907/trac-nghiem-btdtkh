@@ -1,0 +1,127 @@
+.wrapBreadcrumb {
+  position: relative;
+  margin-top: 180px;
+  // height: 0;
+  overflow: hidden;
+  .titleItem {
+    color: $color1;
+    font-family: $font2;
+    text-transform: uppercase;
+  }
+  .wrapImgItem {
+    background-color: $color8;
+    position: relative;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .wrapImgResize {
+      height: 350px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      @include opacity(0.6);
+      object-fit: cover;
+    }
+  }
+
+  .contentText {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    @include translate(0, -50%);
+    text-align: center;
+    z-index: 3;
+  }
+
+  .wrapTitleMain {
+    margin-bottom: 15px;
+  }
+
+  .wrapMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .linkItem {
+      display: block;
+      float: left;
+      font-size: 16px;
+      line-height: 22px;
+      color: $color1;
+      text-transform: capitalize;
+      margin-left: 5px;
+      @include transition(0.5s);
+
+      &:hover {
+        color: rgb(255, 255, 255, 0.8);
+        opacity: 0.5;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      svg {
+        height: 20px;
+        width: 15px;
+        @include translate(0, -1px);
+      }
+
+      &:last-child {
+        svg {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .wrapBreadcrumb {
+    .wrapImgItem {
+      .wrapImgResize {
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .wrapBreadcrumb {
+    margin-top: 80px;
+    .titleItem {
+      font-size: 20px;
+      line-height: 30px;
+      padding-bottom: 5px;
+
+      &::after {
+        width: 30px;
+      }
+    }
+
+    .wrapTitleMain {
+      margin-bottom: 5px;
+    }
+
+    .wrapImgItem {
+      .wrapImgResize {
+        height: 180px;
+      }
+    }
+    .contentText {
+      .linkItem {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+  }
+}

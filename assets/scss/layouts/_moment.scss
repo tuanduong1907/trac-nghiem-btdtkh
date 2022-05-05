@@ -1,0 +1,155 @@
+.wrapperMoment {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.contentMoment {
+    margin-top: 20px;
+    margin-right: -8px;
+    position: relative;
+    display: grid;
+}
+
+
+.containerElementMoment {
+    padding-left: 0;
+    padding-right: 8px;
+    padding-bottom: 8px;
+    &:hover{
+        .wrapperImageMoment{
+            .imageMoment{
+                transform: scale(1.15);
+            }
+        }
+    }
+}
+
+.wrapperImageMoment {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    overflow: hidden;
+    .imageMoment {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all .5s;
+        transform: scale(1.05);
+        object-fit: cover;
+    }
+    svg {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: 22px;
+        height: 22px;
+        color: $color1;
+    }
+}
+
+.wrapperButtonMoment {
+    padding-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .buttonPrimary-outline {
+        border-color: $color4;
+        color: $color4;
+        padding: 14px 39px;
+        font-size: 12px;
+        line-height: 20px;
+        &:hover {
+            background-color: $color3;
+            border-color: $color3;
+            color: $color1;
+        }
+    }
+}
+@media (min-width: 992px){
+    .contentMoment{
+        grid-template-columns: 16.665% 16.665% 16.665% 16.665% 16.665% 16.665%;
+        .elementMoments{
+            &:nth-child(3){
+                grid-column-start: 1;
+            }
+            &:nth-child(5){
+                grid-column-start: 3;
+                grid-column-end: 5;
+                grid-row-start: 1;
+                grid-row-end: 3;
+            }
+            &:nth-child(6){
+                grid-column-start: 5;
+                grid-row-start: 1;
+            }
+            &:nth-child(8){
+                grid-column-start: 6;
+                grid-row-start: 1;
+            }
+        }
+
+        &.resize4{
+            grid-template-columns: 25% 25% 25% 25%;
+            .elementMoments{
+                grid-column-start: auto;
+                grid-column-end: auto;
+                grid-row-start: auto;
+                grid-row-end: auto;
+            }
+        }
+
+        &.resize5{
+            grid-template-columns: 25% 25% 25% 25%;
+            .elementMoments{
+                &:nth-child(5){
+                    grid-column-start: 3;
+                    grid-column-end: 5;
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+                }
+                .wrapperImageMoment{
+                    padding-top: 66.66%;
+                }
+            }
+        }
+
+        &.resize6{
+            grid-template-columns: 16.665% 16.665% 16.665% 16.665% 16.665% 16.665%;
+            .elementMoments{
+                &:nth-child(5){
+                    grid-column-start: 3;
+                    grid-column-end: 5;
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+                }
+                &:nth-child(6){
+                    grid-column-start: 5;
+                    grid-column-end: 7;
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+                }
+                .wrapperImageMoment{
+                    padding-top: 100%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 991.98px){
+    .wrapperImageMoment{
+        padding-top: 56.25%;
+    }
+    .contentMoment{
+        grid-template-columns: 50% 50%;
+    } 
+    .elementMoments{
+        width: 100%;
+        &:nth-child(5){
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+}
+

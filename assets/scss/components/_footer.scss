@@ -1,0 +1,60 @@
+.wrapperFooter{
+    overflow-x: hidden;
+    background-color: $color3;
+    height: 40px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    span{
+        @include text16;
+        color: $color1;
+        font-weight: 500;
+    }
+    .footerLinkWrap{
+        span{
+            margin-right: 12px;
+        }
+        a{
+            color: $color1;
+        }
+    }
+}
+
+/* Mobile & tablet: width <1024px */
+@media only screen and (max-width: 1023px){
+
+}
+
+/* Mobie: width < 740px */
+@media only screen and (max-width: 739px) {
+    .wrapperFooter{
+        span, a {
+            @include text12;
+        }
+    }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+    .wrapperFooter{
+        span, a {
+            @include text14;
+        }
+    }
+}
+
+/* PC Low */
+@media (min-width: 1024px) and (max-width: 1239px) { 
+
+}
+
+/* PC: width >= 1024px */
+@media only screen and (min-width: 1024px) {
+
+}
+

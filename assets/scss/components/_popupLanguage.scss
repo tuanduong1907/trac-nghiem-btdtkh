@@ -1,0 +1,90 @@
+// .wrapperPopupLanguage{
+//     display: none;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     z-index: 9999;
+//     .containerPopupLanguage{
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         background-color: $color1;
+//         padding: 40px;
+//         z-index: 2;
+//     }
+//     .buttonClosePopupLanguage{
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         width: 100%;
+//         height: 100%;
+//         z-index: 1;
+//     }
+// }
+
+// .buttonPopupLanguage{
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     display: flex;
+//     justify-content: center;
+//     background-color: $color3;
+//     align-items: center;
+//     width: 40px;
+//     height: 40px;
+//     transition: all .5s;
+//     svg{
+//         width: 20px;
+//         height: 20px;
+//         color: $color1;
+//         transition: all .5s;
+//     }
+//     &:hover{
+//         background-color: $color1;
+//         svg{
+//             color: $color3;
+//         }
+//     }
+// }
+
+// .contentPopupLanguage{
+//     .titlePopupLanguage{
+//         font-size: 24px;
+//         line-height: 24px;
+//         color: $color3;
+//         text-align: center;
+//         text-transform: uppercase;
+//         margin-bottom: 20px;
+//     }   
+// }
+
+// .listPopupLanguage{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .linkPopupLanguage{
+//     display: block;
+//     font-size: 16px;
+//     line-height: 35px;
+//     width: 310px;
+//     margin-bottom: 8px;
+//     text-align: center;
+//     color: $color11;
+//     transition: all .5s;
+//     &:hover{
+//         color: $color3;
+//     }
+// }
+
+
+
+
+// layout 2 

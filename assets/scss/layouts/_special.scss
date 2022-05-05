@@ -1,0 +1,196 @@
+@import "../components/wrapImgResize";
+
+.wrapperSpecial {
+  .contentSpecial {
+    margin-top: 20px;
+    margin-right: -4px;
+    margin-left: -4px;
+
+    .elementSpecial {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+    .slideArrowPrimary {
+      top: calc(50% + 20px);
+      background-color: transparent;
+      &:after {
+        background-color: $color3;
+      }
+      &.prevArrow {
+        left: -25px;
+        &:before {
+          border-right-color: $color3;
+        }
+      }
+      &.nextArrow {
+        right: -25px;
+        &:before {
+          border-left-color: $color3;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contentSpecial {
+    padding: 0 35px;
+    .slideArrowPrimary {
+      &.prevArrow {
+        left: 10px;
+      }
+      &.nextArrow {
+        right: 10px;
+      }
+    }
+  }
+}
+
+.containerElementSpecial {
+  &:hover {
+    .wrapperImageSpecial {
+      .imageSpecial {
+        transform: scale(1.1);
+      }
+    }
+    .wrapperNameSpecial {
+      .nameSpecial {
+        color: $color3;
+      }
+      &:after {
+        background-color: $color3;
+      }
+    }
+  }
+}
+
+.wrapperImageSpecial {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  height: 100%;
+  .imageSpecial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+    transform: scale(1);
+
+  }
+}
+
+.wrapperNameSpecial {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  margin-bottom: 16px;
+  .nameSpecial {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 26px;
+    color: $color8;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.5s;
+    @include splitText(1, 26px);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 65%;
+    height: 0.8px;
+    background-color: $color2;
+    transform: translateX(-50%);
+    transition: all 0.5s;
+  }
+}
+
+.wrapperTextSpecial {
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    color: $color8;
+    margin-bottom: 16px;
+    text-align: center;
+    @include splitText(3, 66px);
+  }
+}
+
+.wrapperButtonSpecial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .buttonPrimary-outline {
+    padding: 7px 16px;
+    text-transform: none;
+    color: $color2;
+    border-color: $color2;
+    svg {
+      color: $color2;
+    }
+    &:hover {
+      color: $color1;
+      background-color: $color3;
+      border-color: $color3;
+      svg {
+        color: $color1;
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .wrapperNameSpecial {
+    .nameSpecial {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}
+
+/* Mobile & tablet: width <1024px */
+@media only screen and (max-width: 1023px) {
+}
+
+/* Mobie: width < 740px */
+@media only screen and (max-width: 739px) {
+  .wrapperSpecial {
+    .contentSpecial {
+      padding-inline: 0;
+      .slideArrowPrimary {
+        width: 50px;
+        height: 50px;
+        border-radius: 100rem;
+        background-color: $color1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &.nextArrow {
+          right: 0;
+        }
+        &.prevArrow {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+}
+
+/* PC Low */
+@media (min-width: 1024px) and (max-width: 1239px) {
+}
+
+/* PC: width >= 1024px */
+@media only screen and (min-width: 1024px) {
+}

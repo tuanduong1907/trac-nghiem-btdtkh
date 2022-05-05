@@ -1,0 +1,34 @@
+include ../mixin/mixin
+
+
+
+- var data_page = data.page_rooms
+
+doctype html
+html(lang='vi')
+    head
+        +head_setting(data_page)
+    body
+        include ../layout/general/header
+        |
+        |
+        .wrapMain
+            +render_breadcrumb(data_page)
+            |
+            |
+            //- include ../layout/home/Booking
+            |
+            |
+            //- include ../layout/home/Room
+            |
+            |
+            //- include ../layout/rooms/PagingRoom
+        |
+        |
+        include ../layout/general/footer
+        |
+        |
+        //- include ../layout/home/LinkSocial
+        |
+        |
+        //- include ../layout/home/ButtonScroll

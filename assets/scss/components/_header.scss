@@ -1,0 +1,80 @@
+.header {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  background-color: $color3;
+  .headerLogo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    .headerLogoNameWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      .titleSub {
+        @include text20;
+        margin: 0;
+        color: $color4;
+      }
+      .titleMain {
+        @include text24;
+        margin: 0;
+        color: $color1;
+        font-weight: 600;
+      }
+    }
+  }
+}
+/* Mobile & tablet: width <1024px */
+@media only screen and (max-width: 1023px) {
+  .header {
+    height: 60px;
+    .headerLogo {
+      .headerLogoImg {
+        height: 50px;
+      }
+    }
+  }
+}
+
+/* Mobie: width < 740px */
+@media only screen and (max-width: 739px) {
+  .header {
+    .headerLogo {
+      .headerLogoNameWrapper {
+        .titleSub {
+          font-size: 10px;
+          line-height: 16px;
+        }
+        .titleMain {
+          font-size: 10px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+  .header {
+    .headerLogo {
+      .headerLogoNameWrapper {
+        .titleSub {
+          @include text12;
+        }
+        .titleMain {
+          @include text16;
+        }
+      }
+    }
+  }
+}
+
+/* PC Low */
+@media (min-width: 1024px) and (max-width: 1239px) {
+}
+
+/* PC: width >= 1024px */
+@media only screen and (min-width: 1024px) {
+}
