@@ -94,7 +94,6 @@
   gap: 40px;
   background-color: #f5f5f5;
   padding: 40px;
-  width: calc(100% - 40px);
   border-radius: 12px;
 }
 .questionWrap .questionMainWrap {
@@ -129,8 +128,6 @@
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
-  padding: 8px 20px;
-  background-color: #dee2e6;
   border-radius: 12px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -146,15 +143,17 @@
 .questionWrap .questionMainWrap .questionMain .answerList .answerItem {
   display: flex;
   align-items: center;
-  gap: 20px;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  background-color: #f5f5f5;
+  padding: 10px;
+  gap: 12px;
+  border-radius: 12px;
 }
-.questionWrap .questionMainWrap .questionMain .answerList .answerItem:hover .optAnswer,
-.questionWrap .questionMainWrap .questionMain .answerList .answerItem:hover .answerContent {
+.questionWrap .questionMainWrap .questionMain .answerList .answerItem:hover .optAnswer {
   background-color: rgba(116, 21, 32, 0.1);
 }
 .questionWrap .questionMainWrap .questionMain .answerList .answerItem .optAnswer {
@@ -163,26 +162,24 @@
   width: 40px;
   height: 40px;
   border-radius: 100rem;
-  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.2s linear;
   pointer-events: none;
   flex-shrink: 0;
+  margin-bottom: 0;
 }
 .questionWrap .questionMainWrap .questionMain .answerList .answerItem .answerContent {
   font-size: 1.125rem;
   line-height: 1.75rem;
   width: 100%;
-  padding: 8px 20px;
   border-radius: 12px;
-  background-color: #f5f5f5;
   pointer-events: none;
   transition: all 0.2s linear;
+  margin-bottom: 0;
 }
-.questionWrap .questionMainWrap .questionMain .answerList .answerItem.answerItemActive .optAnswer,
-.questionWrap .questionMainWrap .questionMain .answerList .answerItem.answerItemActive .answerContent {
+.questionWrap .questionMainWrap .questionMain .answerList .answerItem.answerItemActive .optAnswer {
   background-color: #8c6546 !important;
   color: #ffffff !important;
 }
@@ -190,9 +187,10 @@
   display: flex;
   gap: 0 12px;
   justify-content: space-between;
+  margin-top: 20px;
 }
 .questionWrap .questionMainWrap .questionNavigation .questionBtn {
-  gap: 0 12px;
+  gap: 0 8px;
   border-radius: 8px;
   width: 130px;
   height: 34px;
@@ -202,18 +200,33 @@
   padding: 4px 12px;
   font-weight: 500;
   text-transform: capitalize;
-  background-color: #8c6546;
-  color: #ffffff;
+  color: #333333;
   transition: all 0.2s linear;
+  background-color: transparent;
+  cursor: pointer;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 .questionWrap .questionMainWrap .questionNavigation .questionBtn svg {
   height: 14px;
-  fill: #ffffff;
+  fill: #333333;
+  position: relative;
+  transition: all 0.2s linear;
+}
+.questionWrap .questionMainWrap .questionNavigation .questionBtn.questionBtnPrev svg {
+  right: 0;
+}
+.questionWrap .questionMainWrap .questionNavigation .questionBtn.questionBtnNext svg {
+  left: 0;
 }
 .questionWrap .questionMainWrap .questionNavigation .questionBtn:hover {
-  opacity: 0.7;
+  opacity: 0.8;
+}
+.questionWrap .questionMainWrap .questionNavigation .questionBtn:hover.questionBtnNext svg {
+  left: 2px;
+}
+.questionWrap .questionMainWrap .questionNavigation .questionBtn:hover.questionBtnPrev svg {
+  right: 2px;
 }
 .questionWrap .questionMainWrap .questionFooter {
   display: flex;
@@ -467,6 +480,10 @@
 }
 /* PC Low */
 @media (min-width: 1024px) and (max-width: 1239px) {
+  .questionWrap {
+    padding: 20px;
+    gap: 0 20px;
+  }
   .questionWrap .questionMainWrap .questionMain {
     height: auto;
   }

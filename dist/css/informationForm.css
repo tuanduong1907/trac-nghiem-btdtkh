@@ -1,0 +1,45 @@
+.inforFormWrap {
+  width: 500px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.inforFormWrap .inforFormTitle {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.inforFormWrap .formInfo {
+  margin-top: 20px;
+}
+.inforFormWrap .formInfo .formItem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  position: relative;
+}
+.inforFormWrap .formInfo .formItem .formItemName {
+  margin-bottom: 5px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+.inforFormWrap .formInfo .formItem .formItemInput {
+  padding: 8px 16px;
+  border: 1px solid #c7c7c7;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.inforFormWrap .formInfo .formItem .formMessage {
+  position: absolute;
+  top: 100%;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #F33A58;
+  font-weight: 500;
+}
+.inforFormWrap .formInfo .btnSubmit {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px !important;
+}

@@ -15,7 +15,6 @@
   gap: 40px;
   background-color: $color9;
   padding: 40px;
-  width: calc(100% - 40px);
   border-radius: 12px;
   .questionMainWrap {
     position: relative;
@@ -43,8 +42,6 @@
       .questionContent {
         @include text18;
         font-weight: 600;
-        padding: 8px 20px;
-        background-color: $color5;
         border-radius: 12px;
         user-select: none;
       }
@@ -56,12 +53,14 @@
         .answerItem {
           display: flex;
           align-items: center;
-          gap: 20px;
           cursor: pointer;
           user-select: none;
+          background-color: $color9;
+          padding: 10px;
+          gap: 12px;
+          border-radius: 12px;
           &:hover {
-            .optAnswer,
-            .answerContent {
+            .optAnswer {
               // background-color: rgba(29, 78, 216, 0.1);
               background-color: rgba(116, 21, 32, 0.1);
             }
@@ -71,26 +70,25 @@
             width: 40px;
             height: 40px;
             border-radius: 100rem;
-            background-color: $color9;
+            // background-color: $color9;
             display: flex;
             justify-content: center;
             align-items: center;
             transition: all 0.2s linear;
             pointer-events: none;
             flex-shrink: 0;
+            margin-bottom: 0;
           }
           .answerContent {
             @include text18;
             width: 100%;
-            padding: 8px 20px;
             border-radius: 12px;
-            background-color: $color9;
             pointer-events: none;
             transition: all 0.2s linear;
+            margin-bottom: 0;
           }
           &.answerItemActive {
-            .optAnswer,
-            .answerContent {
+            .optAnswer {
               background-color: $color3 !important;
               color: $color1 !important;
             }
@@ -102,8 +100,9 @@
       display: flex;
       gap: 0 12px;
       justify-content: space-between;
+      margin-top: 20px;
       .questionBtn {
-        gap: 0 12px;
+        gap: 0 8px;
         border-radius: 8px;
         width: 130px;
         height: 34px;
@@ -113,16 +112,39 @@
         padding: 4px 12px;
         font-weight: 500;
         text-transform: capitalize;
-        background-color: $color3;
-        color: $color1;
+        color: $color8;
         transition: all 0.2s linear;
+        background-color: transparent;
+        cursor: pointer;
         @include text16;
         svg {
           height: 14px;
-          fill: $color1;
+          fill: $color8;
+          position: relative;
+          transition: all 0.2s linear;
+        }
+        &.questionBtnPrev {
+          svg {
+            right: 0;
+          }
+        }
+        &.questionBtnNext {
+          svg {
+            left: 0;
+          }
         }
         &:hover {
-          opacity: 0.7;
+          opacity: 0.8;
+          &.questionBtnNext {
+            svg {
+              left: 2px;
+            }
+          }
+          &.questionBtnPrev {
+            svg {
+              right: 2px;
+            }
+          }
         }
       }
     }
@@ -273,7 +295,7 @@
       }
     }
     .questionSubWrap {
-      .questionHeading{
+      .questionHeading {
         @include text14;
       }
       .questionCountdown {
@@ -387,6 +409,8 @@
 /* PC Low */
 @media (min-width: 1024px) and (max-width: 1239px) {
   .questionWrap {
+    padding: 20px;
+    gap: 0 20px;
     .questionMainWrap {
       .questionMain {
         height: auto;

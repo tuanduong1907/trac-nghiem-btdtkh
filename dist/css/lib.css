@@ -14391,6 +14391,11 @@ a.ui-button:active,
   }
 }
 /* PC Low */
+@media (min-width: 1024px) and (max-width: 1239px) {
+  .wrapperFooter span, .wrapperFooter a {
+    font-size: 11px !important;
+  }
+}
 /* PC: width >= 1024px */
 * {
   font-family: "Montserrat";

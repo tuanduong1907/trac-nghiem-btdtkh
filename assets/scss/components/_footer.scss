@@ -69,6 +69,11 @@
 
 /* PC Low */
 @media (min-width: 1024px) and (max-width: 1239px) {
+  .wrapperFooter {
+    span, a {
+      font-size: 11px !important;
+    }
+  }
 }
 
 /* PC: width >= 1024px */
