@@ -1,34 +1,43 @@
 //information form
-section.container-fluid
-    .inforFormWrap.container-wrap
-        h1.inforFormTitle Thí Sinh Điền Thông Tin
-        form.formInfo(action='' method='post' autocomplete='off')
-            .formItem 
-                label.formItemName(for='fullName')
-                    | Họ và tên
-                input#fullName(type='text' name='fullName' placeholder='Vui lòng nhập họ tên của bạn...').formItemInput
-                span.formMessage
-            .formItem 
-                label.formItemName(for='birthday')
-                    | Ngày sinh
-                input#birthday(type='text' name='birthday' placeholder='Vui lòng nhập ngày của bạn...').formItemInput
-                span.formMessage
-            .formItem 
-                label.formItemName(for='school')
-                    | Trường
-                input#school(type='text' name='school' placeholder='Vui lòng nhập tên trường của bạn...').formItemInput
-                span.formMessage
-            .formItem 
-                label.formItemName(for='class')
-                    | Lớp
-                input#class(type='text' name='class' placeholder='Vui lòng nhập lớp của bạn...').formItemInput
-                span.formMessage
-            .formItem 
-                label.formItemName(for='address')
-                    | Địa chỉ
-                input#address(type='text' name='address' placeholder='Vui lòng nhập địa chỉ của bạn...').formItemInput
-                span.formMessage
-            button.button.buttonPrimary1.btnSubmit
-                | Submit 
+section.container-fluid.inforFormWrapper
+    .inforFormContent.container-wrap
+        .inforFormContentItem
+            .overlay
+            img.infoFormBanner(src="https://statics.vinpearl.com/thap-ba-ponagar-nha-trang-2_1625539466.jpg", alt="")
+        .inforFormContentItem
+            .inforFormTitleWrap
+                h4 Đăng Ký
+                h1.inforFormTitle Thông Tin Thí Sinh
+            form.formInfo(action='' method='post' autocomplete='off')
+                .formItemWrap
+                    .formItem 
+                        label.formItemName(for='fullName')
+                            | Họ và tên
+                        input#fullName(type='text' name='fullName' placeholder=' nhập họ tên...').formItemInput
+                        span.formMessage
+                    .formItem 
+                        label.formItemName(for='birthday')
+                            | Ngày sinh
+                        input#birthday(type='text' name='birthday' placeholder=' nhập ngày sinh...').formItemInput
+                        span.formMessage
+                .formItemWrap
+                    .formItem 
+                        label.formItemName(for='school')
+                            | Trường
+                        input#school(type='text' name='school' placeholder=' nhập tên trường...').formItemInput
+                        span.formMessage
+                    .formItem 
+                        label.formItemName(for='class')
+                            | Lớp
+                        input#class(type='text' name='class' placeholder=' nhập lớp...').formItemInput
+                        span.formMessage
+                .formItem 
+                    label.formItemName(for='address')
+                        | Địa chỉ
+                    input#address(type='text' name='address' placeholder=' nhập địa chỉ...').formItemInput
+                    span.formMessage
+                button.button.buttonPrimary1.btnSubmit
+                    | Submit 
 
 //end information form
+

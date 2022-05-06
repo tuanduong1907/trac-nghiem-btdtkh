@@ -3,12 +3,12 @@ Validator({
   formGroupSelector: ".formItem",
   errorSelector: ".formMessage",
   rules: [
-    Validator.isRequired("#fullName", "Vui lòng nhập tên chủ tài khoản"),
+    Validator.isRequired("#fullName", "Nhập họ tên của bạn"),
     Validator.minLength("#fullName", 6),
-    Validator.isRequired("#birthday", "Vui lòng nhập STK "),
-    Validator.isRequired("#school", "Vui lòng nhập tên ngân hàng"),
-    Validator.isRequired("#class", "Vui lòng nhập nội dung tố cáo"),
-    Validator.isRequired("#address", "Vui lòng nhập tên của bạn"),
+    Validator.isRequired("#birthday", "Nhập ngày sinh của bạn"),
+    Validator.isRequired("#school", "Nhập tên trường của bạn"),
+    Validator.isRequired("#class", "Nhập lớp của bạn"),
+    Validator.isRequired("#address", "Nhập địa chỉ của bạn"),
   ],
 
   onSubmit: function (data) {

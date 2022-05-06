@@ -39,58 +39,73 @@
         user-select: none;
         text-transform: capitalize;
       }
-      .questionContent {
-        @include text18;
-        font-weight: 600;
-        border-radius: 12px;
-        user-select: none;
-      }
-      .answerList {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        .answerItem {
-          display: flex;
-          align-items: center;
-          cursor: pointer;
-          user-select: none;
-          background-color: $color9;
-          padding: 10px;
-          gap: 12px;
+      .questionMainItem {
+        display: none;
+        &.active {
+          display: block;
+        }
+        &.questionMainItem1,
+        &.questionMainItem2 {
+          &.active {
+            display: block;
+          }
+        }
+        .questionContent {
+          @include text18;
+          font-weight: 600;
           border-radius: 12px;
-          &:hover {
-            .optAnswer {
-              // background-color: rgba(29, 78, 216, 0.1);
-              background-color: rgba(116, 21, 32, 0.1);
-            }
-          }
-          .optAnswer {
-            @include text18;
-            width: 40px;
-            height: 40px;
-            border-radius: 100rem;
-            // background-color: $color9;
+          user-select: none;
+        }
+        .answerList {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .answerItem {
             display: flex;
-            justify-content: center;
             align-items: center;
-            transition: all 0.2s linear;
-            pointer-events: none;
-            flex-shrink: 0;
-            margin-bottom: 0;
-          }
-          .answerContent {
-            @include text18;
-            width: 100%;
+            cursor: pointer;
+            user-select: none;
+            background-color: $color9;
+            padding: 10px;
+            gap: 12px;
             border-radius: 12px;
-            pointer-events: none;
-            transition: all 0.2s linear;
-            margin-bottom: 0;
-          }
-          &.answerItemActive {
+            &:hover {
+              .optAnswer {
+                // background-color: rgba(29, 78, 216, 0.1);
+                background-color: rgba(116, 21, 32, 0.1);
+              }
+            }
             .optAnswer {
-              background-color: $color3 !important;
-              color: $color1 !important;
+              @include text18;
+              width: 40px;
+              height: 40px;
+              border-radius: 100rem;
+              // background-color: $color9;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              transition: all 0.2s linear;
+              pointer-events: none;
+              flex-shrink: 0;
+              margin-bottom: 0;
+            }
+            .answerContent {
+              @include text18;
+              width: 100%;
+              border-radius: 12px;
+              pointer-events: none;
+              transition: all 0.2s linear;
+              margin-bottom: 0;
+            }
+            &.answerItem--1,
+            &.answerItem--2 {
+              &.answerItemActive {
+                .optAnswer {
+                  background-color: $color3 !important;
+                  color: $color1 !important;
+                }
+              }
             }
           }
         }
@@ -117,6 +132,7 @@
         background-color: transparent;
         cursor: pointer;
         @include text16;
+        user-select: none;
         svg {
           height: 14px;
           fill: $color8;
@@ -215,6 +231,14 @@
               background-color: $color3;
               font-weight: 600;
               color: $color1;
+            }
+            &.textValSelected--1,
+            &.textValSelected--2 {
+              &.active {
+                background-color: $color3;
+                font-weight: 600;
+                color: $color1;
+              }
             }
             &:last-child {
               border-right: none;

@@ -1,45 +1,166 @@
-.inforFormWrap {
-  width: 500px;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-.inforFormWrap .inforFormTitle {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-.inforFormWrap .formInfo {
-  margin-top: 20px;
-}
-.inforFormWrap .formInfo .formItem {
+.inforFormWrapper {
+  height: calc(100vh - 120px - 40px);
   display: flex;
-  flex-direction: column;
-  margin-bottom: 25px;
+  align-items: center;
   position: relative;
 }
-.inforFormWrap .formInfo .formItem .formItemName {
+.inforFormWrapper .inforFormImages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.inforFormWrapper .inforFormImages img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.inforFormWrapper .inforFormContent {
+  width: 950px;
+  border-radius: 12px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.inforFormWrapper .inforFormContent .inforFormTitle {
+  text-transform: uppercase;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  color: #8c6546;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.inforFormWrapper .inforFormContent .formInfo {
+  margin-top: 20px;
+}
+.inforFormWrapper .inforFormContent .formInfo .formItemWrap {
+  display: flex;
+  gap: 0 12px;
+}
+.inforFormWrapper .inforFormContent .formInfo .formItem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+}
+.inforFormWrapper .inforFormContent .formInfo .formItem .formItemName {
   margin-bottom: 5px;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
 }
-.inforFormWrap .formInfo .formItem .formItemInput {
-  padding: 8px 16px;
+.inforFormWrapper .inforFormContent .formInfo .formItem .formItemInput {
+  padding: 5px 12px;
   border: 1px solid #c7c7c7;
   border-radius: 4px;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-.inforFormWrap .formInfo .formItem .formMessage {
+.inforFormWrapper .inforFormContent .formInfo .formItem .formMessage {
   position: absolute;
-  top: 100%;
+  top: 103%;
   font-size: 0.75rem;
   line-height: 1rem;
   color: #F33A58;
   font-weight: 500;
 }
-.inforFormWrap .formInfo .btnSubmit {
+.inforFormWrapper .inforFormContent .formInfo .btnSubmit {
   width: 100%;
   height: 40px;
   border-radius: 4px !important;
+  margin-top: 10px;
 }
+.inforFormWrapper .inforFormContentItem:first-child {
+  position: relative;
+}
+.inforFormWrapper .inforFormContentItem:first-child .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.inforFormWrapper .inforFormContentItem .infoFormBanner {
+  width: 500px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.inforFormWrapper .inforFormContentItem:last-child {
+  flex: 1;
+  padding: 20px;
+}
+.inforFormWrapper .inforFormContentItem .inforFormTitleWrap {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.inforFormWrapper .inforFormContentItem .inforFormTitleWrap h4 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  position: relative;
+  color: #F9C518;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.inforFormWrapper .inforFormContentItem .inforFormTitleWrap h4::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  top: 100%;
+  background-color: #F9C518;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Mobile & tablet: width <1024px */
+@media only screen and (max-width: 1023px) {
+  .inforFormWrapper {
+    height: auto;
+    padding-block: 30px;
+  }
+  .inforFormWrapper .inforFormContent {
+    width: 100%;
+  }
+  .inforFormWrapper .inforFormContentItem:first-child {
+    width: 40%;
+  }
+  .inforFormWrapper .inforFormContentItem .infoFormBanner {
+    width: 100%;
+  }
+}
+/* Mobie: width < 740px */
+@media only screen and (max-width: 739px) {
+  .inforFormWrapper .inforFormContent {
+    flex-direction: column;
+  }
+  .inforFormWrapper .inforFormContent .formInfo .formItemWrap {
+    flex-direction: column;
+  }
+  .inforFormWrapper .inforFormContent .inforFormTitle {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .inforFormWrapper .inforFormContentItem:first-child {
+    width: 100%;
+  }
+  .inforFormWrapper .inforFormContentItem .infoFormBanner {
+    height: 130px;
+  }
+}
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (width: 768px) {
+  .wrapMain {
+    height: calc(100vh - 60px - 90px);
+  }
+}
+/* PC Low */
+/* PC: width >= 1024px */

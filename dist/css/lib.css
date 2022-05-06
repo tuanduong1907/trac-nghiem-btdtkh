@@ -14617,6 +14617,10 @@ button {
     background-color: #8c6546 !important;
     color: #ffffff;
   }
+
+  .event-none {
+    pointer-events: none;
+  }
 }
 @-webkit-keyframes fadeIn {
   from {
@@ -14646,3 +14650,14 @@ button {
   display: flex;
   align-items: center;
 }
+
+/* Mobile & tablet: width <1024px */
+@media only screen and (max-width: 1023px) {
+  .wrapMain {
+    height: auto;
+  }
+}
+/* Mobie: width < 740px */
+/* Tablet: width >= 740px and width < 1024px */
+/* PC Low */
+/* PC: width >= 1024px */
