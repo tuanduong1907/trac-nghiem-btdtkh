@@ -127,15 +127,16 @@
         padding: 4px 12px;
         font-weight: 500;
         text-transform: capitalize;
-        color: $color8;
+        color: $color3;
         transition: all 0.2s linear;
         background-color: transparent;
         cursor: pointer;
         @include text16;
+        position: relative;
         user-select: none;
         svg {
           height: 14px;
-          fill: $color8;
+          fill: $color3;
           position: relative;
           transition: all 0.2s linear;
         }
@@ -160,6 +161,10 @@
             svg {
               right: 2px;
             }
+          }
+          color: $color1;
+          svg{
+            fill: $color1;
           }
         }
       }

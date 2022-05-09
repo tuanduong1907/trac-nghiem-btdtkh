@@ -10,6 +10,15 @@
   display: flex;
   align-items: center;
   position: relative;
+  position: relative;
+  .inforFormWrapperImages {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    filter: blur(5px);
+  }
   .inforFormImages {
     position: absolute;
     top: 0;
@@ -23,7 +32,9 @@
     }
   }
   .inforFormContent {
-    width: 950px;
+    width: 1000px;
+    background-color: #fff;
+    z-index: 3;
     border-radius: 12px;
     display: flex;
     overflow: hidden;
@@ -46,6 +57,7 @@
         flex-direction: column;
         margin-bottom: 20px;
         position: relative;
+        flex: 1;
         .formItemName {
           margin-bottom: 5px;
           @include text14;
@@ -76,6 +88,9 @@
   .inforFormContentItem {
     &:first-child {
       position: relative;
+      width: 100%;
+      max-width: 500px;
+      overflow: hidden;
       .overlay {
         position: absolute;
         top: 0;
@@ -83,12 +98,19 @@
         right: 0;
         bottom: 0;
         background-color: rgba(0, 0, 0, 0.2);
+        z-index: 3;
+      }
+      &:hover {
+        .infoFormBanner {
+          transform: scale(1.1);
+        }
       }
     }
     .infoFormBanner {
-      width: 500px;
+      width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: all linear .25s;
     }
     &:last-child {
       flex: 1;
@@ -171,14 +193,12 @@
 
 /* Tablet: width >= 740px and width < 1024px */
 @media only screen and (min-width: 740px) and (max-width: 1023px) {
-
 }
 
 @media only screen and (width: 768px) {
   .wrapMain {
     height: calc(100vh - 60px - 90px);
   }
-
 }
 
 /* PC Low */
@@ -187,4 +207,7 @@
 
 /* PC: width >= 1024px */
 @media only screen and (min-width: 1024px) {
+  .inforFormWrapper {
+    padding-inline: 0;
+  }
 }

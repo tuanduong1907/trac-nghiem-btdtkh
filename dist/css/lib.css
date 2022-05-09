@@ -13743,6 +13743,7 @@ a.ui-button:active,
   display: flex;
   align-items: center;
   background-color: #8c6546;
+  z-index: 10;
 }
 .header .headerLogo {
   display: flex;

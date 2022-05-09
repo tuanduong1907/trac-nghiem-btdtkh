@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  const answerItem = document.querySelectorAll(".answerItem");
   const questionItem = document.querySelectorAll(".questionItem");
   const btnSubmit = document.querySelector("#btnSubmit");
   const questionMain = document.querySelector(".questionMain");
@@ -32,12 +31,10 @@ $(document).ready(function () {
     <div class="modalDialog">
     <div class="modalContainer">
         <div class="modalHeader">
-            <p>Kết Quả Bài Thi Trắc Nghiệm</p>
+            <p>Thông báo</p>
         </div>
         <div class="modalContent">
-            <p class="modalContentHeading">Kết quả của bạn</p>
-            <p><span>Số điểm:</span> 7</p>
-            <p><span>Số câu trả lời đúng:</span> 7/10</p>
+            <p class="modalContentHeading">Nộp thành công!</p>
             <div class="modalContentBtnWrap">
               <button class="modalContentBtn modalBtnConfirm button buttonPrimary1">Kết thúc</button>
             </div>
@@ -146,9 +143,7 @@ $(document).ready(function () {
       }
     });
   }
-  answerItem2.forEach((el) =>
-    el.addEventListener("click", handleChangeAnswer2)
-  );
+  answerItem2.forEach((el) => el.addEventListener("click", renderQuestion(2)));
 
   answerItem2.forEach((item) =>
     item.addEventListener("click", (e) => {
@@ -161,33 +156,55 @@ $(document).ready(function () {
   // end answer
 
   //
-  const questionMainItem = document.querySelectorAll(".questionMainItem");
-  function handleChangeQuestion(e) {
-    const questionId = e.target.dataset.question;
-    questionMainItem.forEach((el) => {
-      el.classList.add("active");
-    });
-    questionMainItem.forEach((el) => {
-      el.classList.remove("active");
-      if (el.getAttribute("data-question") === questionId) {
-        el.classList.add("active");
-      }
-    });
-  }
-  questionItem.forEach((item) =>
-    item.addEventListener("click", handleChangeQuestion)
-  );
+  // const questionMainItem = document.querySelectorAll(".questionMainItem");
+  // function handleChangeQuestion(e) {
+  //   const questionId = e.target.dataset.question;
+  //   questionMainItem.forEach((el) => {
+  //     el.classList.add("active");
+  //   });
+  //   questionMainItem.forEach((el) => {
+  //     el.classList.remove("active");
+  //     if (el.getAttribute("data-question") === questionId) {
+  //       el.classList.add("active");
+  //     }
+  //   });
+  // }
+  // questionItem.forEach((item) =>
+  //   item.addEventListener("click", handleChangeQuestion)
+  // );
   //
   // change questions
-  const questionMainItem1 = document.querySelector('.questionMainItem1')
-  const questionMainItem2 = document.querySelector('.questionMainItem2')
-  questionBtnPrev.addEventListener('click', () => {
-    questionMainItem.forEach((item) => item.classList.remove("active"));
-    questionMainItem1.classList.add("active");
-  })
-  questionBtnNext.addEventListener('click', () => {
-    questionMainItem.forEach((item) => item.classList.remove("active"));
-    questionMainItem2.classList.add("active");
-  })
+  let index = 1;
+  const renderQuestion = (number) => {
+    const questionTitle = questionList[number]["title"];
+    const answerA = questionList[number]["A"];
+    const answerB = questionList[number]["B"];
+    const answerC = questionList[number]["C"];
+    const answerD = questionList[number]["D"];
+    $(".questionContent").html(questionTitle);
+    $(".answerItem1 .answerContent").html(answerA);
+    $(".answerItem2 .answerContent").html(answerB);
+    $(".answerItem3 .answerContent").html(answerC);
+    $(".answerItem4 .answerContent").html(answerD);
+  };
+  renderQuestion(index);
+  questionBtnPrev.addEventListener("click", () => {
+    questionBtnNext.style.pointerEvents = "auto";
+    questionBtnNext.style.opacity = "1";
+    if (index <= 2) {
+      questionBtnPrev.style.pointerEvents = "none";
+      questionBtnPrev.style.opacity = ".2";
+    }
+    renderQuestion((index -= 1));
+  });
+  questionBtnNext.addEventListener("click", () => {
+    questionBtnPrev.style.pointerEvents = "auto";
+    questionBtnPrev.style.opacity = "1";
+    if (index >= 9) {
+      questionBtnNext.style.pointerEvents = "none";
+      questionBtnNext.style.opacity = ".2";
+    }
+    renderQuestion((index += 1));
+  });
   //end change question
 });

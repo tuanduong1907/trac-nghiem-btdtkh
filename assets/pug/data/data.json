@@ -26,54 +26,6 @@
 			]
 		},
 		"footer": {},
-		"listAsnswer1": [
-			{
-				"id": 1,
-				"dataset": "data-answer1"
-			},
-			{
-				"id": 2,
-				"dataset": "data-answer1"
-			},
-			{
-				"id": 3,
-				"dataset": "data-answer1"
-			},
-			{
-				"id": 4,
-				"dataset": "data-answer1"
-			},
-			{
-				"id": 5,
-				"dataset": "data-answer1"
-			}
-		],
-		"listquestion1": [
-			{
-				"id": 1,
-				"answer": "A",
-				"dataset": "data-answer1",
-				"answerContent": "Sở hữu di sản văn hóa"
-			},
-			{
-				"id": 2,
-				"answer": "B",
-				"dataset": "data-answer1",
-				"answerContent": "Sở hữu hợp pháp di sản văn hóa"
-			},
-			{
-				"id": 3,
-				"answer": "C",
-				"dataset": "data-answer1",
-				"answerContent": "Sở hữu toàn bộ di sản văn hóa"
-			},
-			{
-				"id": 4,
-				"answer": "D",
-				"dataset": "data-answer1",
-				"answerContent": "Chiếm hửu di sản văn hóa"
-			}
-		],
 		"page_home": {
 			"title_page": "Trắc Nghiệm",
 			"description_page": "Trắc Nghiệm",

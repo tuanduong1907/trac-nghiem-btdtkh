@@ -3,6 +3,16 @@
   display: flex;
   align-items: center;
   position: relative;
+  position: relative;
+}
+.inforFormWrapper .inforFormWrapperImages {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.7;
+  filter: blur(5px);
 }
 .inforFormWrapper .inforFormImages {
   position: absolute;
@@ -18,7 +28,9 @@
      object-fit: cover;
 }
 .inforFormWrapper .inforFormContent {
-  width: 950px;
+  width: 1000px;
+  background-color: #fff;
+  z-index: 3;
   border-radius: 12px;
   display: flex;
   overflow: hidden;
@@ -44,6 +56,7 @@
   flex-direction: column;
   margin-bottom: 20px;
   position: relative;
+  flex: 1;
 }
 .inforFormWrapper .inforFormContent .formInfo .formItem .formItemName {
   margin-bottom: 5px;
@@ -74,6 +87,9 @@
 }
 .inforFormWrapper .inforFormContentItem:first-child {
   position: relative;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
 }
 .inforFormWrapper .inforFormContentItem:first-child .overlay {
   position: absolute;
@@ -82,12 +98,17 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+.inforFormWrapper .inforFormContentItem:first-child:hover .infoFormBanner {
+  transform: scale(1.1);
 }
 .inforFormWrapper .inforFormContentItem .infoFormBanner {
-  width: 500px;
+  width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: all linear 0.25s;
 }
 .inforFormWrapper .inforFormContentItem:last-child {
   flex: 1;
@@ -164,3 +185,8 @@
 }
 /* PC Low */
 /* PC: width >= 1024px */
+@media only screen and (min-width: 1024px) {
+  .inforFormWrapper {
+    padding-inline: 0;
+  }
+}
