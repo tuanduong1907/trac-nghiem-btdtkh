@@ -129,52 +129,34 @@ $(document).ready(function () {
   );
   // end answer
 
-  // answer2
-  const textValSelected2 = document.querySelectorAll(".textValSelected--2");
-  const answerItem2 = document.querySelectorAll(".answerItem--2");
-  function handleChangeAnswer2(e) {
-    const answerId = e.target.dataset.answer2;
-    answerItem2.forEach((el) => el.classList.remove("active"));
-    e.target.classList.add("active");
-    textValSelected2.forEach((el) => {
-      el.classList.remove("active");
-      if (el.getAttribute("data-answer2") === answerId) {
-        el.classList.add("active");
-      }
-    });
-  }
-  answerItem2.forEach((el) => el.addEventListener("click", renderQuestion(2)));
-
-  answerItem2.forEach((item) =>
-    item.addEventListener("click", (e) => {
-      answerItem2.forEach((item) => {
-        item.classList.remove("answerItemActive");
-      });
-      e.target.classList.toggle("answerItemActive");
-    })
-  );
-  // end answer
-
-  //
-  // const questionMainItem = document.querySelectorAll(".questionMainItem");
-  // function handleChangeQuestion(e) {
-  //   const questionId = e.target.dataset.question;
-  //   questionMainItem.forEach((el) => {
-  //     el.classList.add("active");
-  //   });
-  //   questionMainItem.forEach((el) => {
+  // // answer2
+  // const textValSelected2 = document.querySelectorAll(".textValSelected--2");
+  // const answerItem2 = document.querySelectorAll(".answerItem--2");
+  // function handleChangeAnswer2(e) {
+  //   const answerId = e.target.dataset.answer2;
+  //   answerItem2.forEach((el) => el.classList.remove("active"));
+  //   e.target.classList.add("active");
+  //   textValSelected2.forEach((el) => {
   //     el.classList.remove("active");
-  //     if (el.getAttribute("data-question") === questionId) {
+  //     if (el.getAttribute("data-answer2") === answerId) {
   //       el.classList.add("active");
   //     }
   //   });
   // }
-  // questionItem.forEach((item) =>
-  //   item.addEventListener("click", handleChangeQuestion)
+  // answerItem2.forEach((el) => el.addEventListener("click", renderQuestion(2)));
+
+  // answerItem2.forEach((item) =>
+  //   item.addEventListener("click", (e) => {
+  //     answerItem2.forEach((item) => {
+  //       item.classList.remove("answerItemActive");
+  //     });
+  //     e.target.classList.toggle("answerItemActive");
+  //   })
   // );
-  //
+  // // end answer
+
   // change questions
-  let index = 1;
+  let num = 1;
   const renderQuestion = (number) => {
     const questionTitle = questionList[number]["title"];
     const answerA = questionList[number]["A"];
@@ -187,24 +169,35 @@ $(document).ready(function () {
     $(".answerItem3 .answerContent").html(answerC);
     $(".answerItem4 .answerContent").html(answerD);
   };
-  renderQuestion(index);
+  renderQuestion(num);
   questionBtnPrev.addEventListener("click", () => {
     questionBtnNext.style.pointerEvents = "auto";
     questionBtnNext.style.opacity = "1";
-    if (index <= 2) {
+    if (num <= 2) {
       questionBtnPrev.style.pointerEvents = "none";
       questionBtnPrev.style.opacity = ".2";
     }
-    renderQuestion((index -= 1));
+    renderQuestion((num -= 1));
   });
   questionBtnNext.addEventListener("click", () => {
     questionBtnPrev.style.pointerEvents = "auto";
     questionBtnPrev.style.opacity = "1";
-    if (index >= 9) {
+    if (num >= 9) {
       questionBtnNext.style.pointerEvents = "none";
       questionBtnNext.style.opacity = ".2";
     }
-    renderQuestion((index += 1));
+    renderQuestion((num += 1));
   });
   //end change question
+
+  // select answer
+  questionItem.forEach((item) =>
+    item.addEventListener("click", (e) => {
+      const answerId = e.target.dataset.question;
+      const answerItem = document.querySelectorAll(".answerItem");
+      answerItem.forEach((item) => item.classList.add(`answerItem--${answerId}`));
+
+      renderQuestion(answerId);
+    })
+  );
 });

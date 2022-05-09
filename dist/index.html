@@ -135,21 +135,21 @@
                   <div class="textValSelected textValSelected--2" data-answer2="3">C </div>
                   <div class="textValSelected textValSelected--2" data-answer2="4">D</div>
                 </li>
-                <li class="questionItem event-none" data-question="3"> 
+                <li class="questionItem" data-question="3"> 
                   <div class="titleItemQuestion">3</div>
                   <div class="textValSelected" data-answer3="1">A</div>
                   <div class="textValSelected active" data-answer3="1">B </div>
                   <div class="textValSelected" data-answer2="1">C </div>
                   <div class="textValSelected" data-answer3="1">D</div>
                 </li>
-                <li class="questionItem event-none" data-question="4"> 
+                <li class="questionItem" data-question="4"> 
                   <div class="titleItemQuestion">4</div>
                   <div class="textValSelected">A</div>
                   <div class="textValSelected active">B </div>
                   <div class="textValSelected">C </div>
                   <div class="textValSelected">D</div>
                 </li>
-                <li class="questionItem event-none" data-question="5"> 
+                <li class="questionItem" data-question="5"> 
                   <div class="titleItemQuestion">5</div>
                   <div class="textValSelected">A</div>
                   <div class="textValSelected">B </div>
@@ -158,35 +158,35 @@
                 </li>
               </ul>
               <ul class="questionList">
-                <li class="questionItem event-none" data-question="6"> 
+                <li class="questionItem" data-question="6"> 
                   <div class="titleItemQuestion">6</div>
                   <div class="textValSelected">A</div>
                   <div class="textValSelected">B </div>
                   <div class="textValSelected active">C </div>
                   <div class="textValSelected">D</div>
                 </li>
-                <li class="questionItem event-none" data-question="7"> 
+                <li class="questionItem" data-question="7"> 
                   <div class="titleItemQuestion">7</div>
                   <div class="textValSelected active">A</div>
                   <div class="textValSelected">B </div>
                   <div class="textValSelected">C </div>
                   <div class="textValSelected">D</div>
                 </li>
-                <li class="questionItem event-none" data-question="8"> 
+                <li class="questionItem" data-question="8"> 
                   <div class="titleItemQuestion">8</div>
                   <div class="textValSelected">A</div>
                   <div class="textValSelected">B </div>
                   <div class="textValSelected">C </div>
                   <div class="textValSelected active">D</div>
                 </li>
-                <li class="questionItem event-none" data-question="9"> 
+                <li class="questionItem" data-question="9"> 
                   <div class="titleItemQuestion">9</div>
                   <div class="textValSelected">A</div>
                   <div class="textValSelected active">B </div>
                   <div class="textValSelected">C </div>
                   <div class="textValSelected">D</div>
                 </li>
-                <li class="questionItem event-none" data-question="10"> 
+                <li class="questionItem" data-question="10"> 
                   <div class="titleItemQuestion">10</div>
                   <div class="textValSelected">A</div>
                   <div class="textValSelected">B </div>
@@ -205,6 +205,7 @@
       <script>
         const questionList = {
             1: {
+                id: 1,
                 title: "Câu 1: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
                 A: 'Sở hữu di sản văn hóa',
                 B: 'Sở hữu di sản văn hóa',
@@ -212,67 +213,76 @@
                 D: 'Sở hữu di sản văn hóa',
             },
             2: {
-                title: "Câu 2: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-                A: 'Sở hữu di sản văn hóa',
-                B: 'Sở hữu di sản văn hóa',
-                C: 'Sở hữu di sản văn hóa',
-                D: 'Sở hữu di sản văn hóa',
+                id: 2,
+                title: "Câu 2: Di sản văn hóa vật thể và phi vật thể hay còn được gọi là?",
+                A: 'Di sản văn hóa vật chất và tinh thần.',
+                B: 'Di sản văn hóa vô hình và hữu hình.',
+                C: 'Di sản văn hóa trừu tượng và phi trừu tượng.',
+                D: 'Di sản văn hóa đếm được và không đếm được.',
             },
             3: {
-                title: "Câu 3: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-                A: 'Sở hữu di sản văn hóa',
-                B: 'Sở hữu di sản văn hóa',
-                C: 'Sở hữu di sản văn hóa',
-                D: 'Sở hữu di sản văn hóa',
+                id: 3,
+                title: "Câu 3: Những sản phẩm tinh thần có giá trị về lịch sử, văn hoá, khoa học được lưu giữ bằng trí nhớ, chữ viết, truyền miệng, truyền nghề, trình diễn và các hình thức lưu giữ, lưu truyền khác được gọi là ?",
+                A: 'Di sản.',
+                B: 'Di sản văn hóa.',
+                C: 'Di sản văn hóa vật thể.',
+                D: 'Di sản văn hóa phi vật thể.',
             },
             4: {
-                title: "Câu 4: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-                A: 'Sở hữu di sản văn hóa',
-                B: 'Sở hữu di sản văn hóa',
-                C: 'Sở hữu di sản văn hóa',
-                D: 'Sở hữu di sản văn hóa',
+                id: 4,
+                title: "Câu 4: Di sản văn hóa vật thể bao gồm?",
+                A: 'Di tích lịch sử - văn hóa và tài nguyên thiên nhiên.',
+                B: 'Danh lam thắng cảnh và tài nguyên thiên nhiên.',
+                C: 'Tài nguyên thiên nhiên và môi trường.',
+                D: 'Di tích lịch sử - văn hóa và danh lam thắng cảnh.',
             },
             5: {
-                title: "Câu 5: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-                A: 'Sở hữu di sản văn hóa',
-                B: 'Sở hữu di sản văn hóa',
-                C: 'Sở hữu di sản văn hóa',
-                D: 'Sở hữu di sản văn hóa',
+                id: 5,
+                title: "Câu 5: Tính đến năm 2019, Việt Nam có bao nhiêu di sản văn hóa được UNESCO công nhận?",
+                A: '13',
+                B: '14',
+                C: '15',
+                D: '16',
             },
             6: {
-                title: "Câu 6: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-                A: 'Sở hữu di sản văn hóa',
-                B: 'Sở hữu di sản văn hóa',
-                C: 'Sở hữu di sản văn hóa',
-                D: 'Sở hữu di sản văn hóa',
+                id: 6,
+                title: "Câu 6: Di sản tư liệu của Việt Nam được công nhận di sản tư liệu thế giới là?",
+                A: 'Mộc bản triều Nguyễn.',
+                B: 'Châu bản triều Nguyễn.',
+                C: 'Mộc bản kinh phật chùa Vĩnh Nghiêm.',
+                D: 'Cả A,B,C.',
             },
             7: {
-                title: "Câu 7: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-                A: 'Sở hữu di sản văn hóa',
-                B: 'Sở hữu di sản văn hóa',
-                C: 'Sở hữu di sản văn hóa',
-                D: 'Sở hữu di sản văn hóa',
+                id: 7,
+                title: "Câu 7: Nếu phát hiện trong vườn nhà có vật cổ không rõ nguồn gốc từ đâu bạn sẽ làm gì?",
+                A: 'Báo cho chính quyền địa phương.',
+                B: 'Mang đi bán.',
+                C: 'Lờ đi coi như không biết.',
+                D: 'Giấu không cho ai biết.',
             },
             8: {
-                title: "Câu 8: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-                A: 'Sở hữu di sản văn hóa',
-                B: 'Sở hữu di sản văn hóa',
-                C: 'Sở hữu di sản văn hóa',
-                D: 'Sở hữu di sản văn hóa',
+                id: 8,
+                title: "Câu 8: Những sản phẩm tinh thần vật chất có giá trị lịch sử, văn hóa, khoa học, được lưu truyền từ thế hệ này sang thế hệ khác được gọi là",
+                A: 'di sản văn hóa',
+                B: 'thành tựu văn hóa',
+                C: 'truyền thống văn hóa',
+                D: 'giá trị văn hóa',
             },
             9: {
-                title: "Câu 9: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-                A: 'Sở hữu di sản văn hóa',
-                B: 'Sở hữu di sản văn hóa',
-                C: 'Sở hữu di sản văn hóa',
-                D: 'Sở hữu di sản văn hóa',
+                id: 9,
+                title: "Câu 9: Các di sản văn hóa phi vật thể được UNESCO công nhận của Việt Nam",
+                A: 'Nhã nhạc cung đình Huế',
+                B: 'Dân ca quan họ',
+                C: 'Ca trù',
+                D: 'Tất cả đáp án đúng',
             },
             10: {
-                title: "Câu 10: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-                A: 'Sở hữu di sản văn hóa',
-                B: 'Sở hữu di sản văn hóa',
-                C: 'Sở hữu di sản văn hóa',
-                D: 'Sở hữu di sản văn hóa',
+                id: 10,
+                title: "Câu 10: Phạm tội chiếm giữ tài sản có giá trị từ 200 triệu đồng trở lên hoặc cổ vật, vật có giá trị lịch sử, văn hoá có giá trị đặc biệt, thì bị phạt tù từ",
+                A: 'Một đến năm năm',
+                B: 'Hai đến bốn năm',
+                C: 'Một đến ba năm',
+                D: 'Một đến bốn năm',
             },
         }
       </script>

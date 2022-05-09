@@ -147,6 +147,7 @@
   .inforFormWrapper {
     height: auto;
     padding-block: 30px;
+    overflow-x: hidden;
   }
   .inforFormWrapper .inforFormContent {
     width: 100%;

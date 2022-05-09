@@ -19,36 +19,6 @@ section.container-fluid
                         li.answerItem.answerItem4.answerItem--1(data-answer= '4') 
                             h4.optAnswer D
                             h4.answerContent
-                //- .questionMainItem.questionMainItem2(data-question= "2") 
-                //-     .questionContent Câu 2: Theo quy định tại Luật Di sản văn hóa, di vật được hiểu như thế nào?
-                //-     ul.answerList 
-                //-         li.answerItem.answerItem--2(data-answer2= '1') 
-                //-             h4.optAnswer A
-                //-             h4.answerContent Là hiện vật được lưu truyền lại, có giá trị lịch sử khoa học
-                //-         li.answerItem.answerItem--2(data-answer2= '2')
-                //-             h4.optAnswer B
-                //-             h4.answerContent Là vật có giá trị lịch sử, văn hóa, khoa học
-                //-         li.answerItem.answerItem--2(data-answer2= '3') 
-                //-             h4.optAnswer C
-                //-             h4.answerContent Là hiện vật được lưu truyền lại, có giá trị lịch sử, văn hóa, khoa học
-                //-         li.answerItem.answerItem--2(data-answer2= '4') 
-                //-             h4.optAnswer D
-                //-             h4.answerContent Là hiện vật được lưu truyền lại, có giá trị văn hóa khoa học
-                //- .questionMainItem(data-question= "3") 
-                //-     .questionContent Câu 3: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?
-                //-     ul.answerList 
-                //-         li.answerItem.answerItem--2(data-answer3= '1') 
-                //-             h4.optAnswer A
-                //-             h4.answerContent Sở hữu di sản văn hóa
-                //-         li.answerItem.answerItem--2(data-answer3= '2')
-                //-             h4.optAnswer B
-                //-             h4.answerContent Sở hữu hợp pháp di sản văn hóa
-                //-         li.answerItem.answerItem--2(data-answer3= '3') 
-                //-             h4.optAnswer C
-                //-             h4.answerContent Sở hữu toàn bộ di sản văn hóa
-                //-         li.answerItem.answerItem--2(data-answer3= '4') 
-                //-             h4.optAnswer D
-                //-             h4.answerContent Chiếm hửu di sản văn hóa
             .questionNavigation 
                 div.questionBtn.button.buttonSecondary.questionBtnPrev
                     svg(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512')
@@ -81,50 +51,50 @@ section.container-fluid
                         .textValSelected.textValSelected--2(data-answer2= '2') B 
                         .textValSelected.textValSelected--2(data-answer2= '3') C 
                         .textValSelected.textValSelected--2(data-answer2= '4') D
-                    li.questionItem.event-none(data-question= "3") 
+                    li.questionItem(data-question= "3") 
                         .titleItemQuestion 3
                         .textValSelected(data-answer3= '1') A
                         .textValSelected.active(data-answer3= '1') B 
                         .textValSelected(data-answer2= '1') C 
                         .textValSelected(data-answer3= '1') D
-                    li.questionItem.event-none(data-question= "4") 
+                    li.questionItem(data-question= "4") 
                         .titleItemQuestion 4
                         .textValSelected A
                         .textValSelected.active B 
                         .textValSelected C 
                         .textValSelected D
-                    li.questionItem.event-none(data-question= "5") 
+                    li.questionItem(data-question= "5") 
                         .titleItemQuestion 5
                         .textValSelected A
                         .textValSelected B 
                         .textValSelected.active C 
                         .textValSelected D
                 ul.questionList
-                    li.questionItem.event-none(data-question= "6") 
+                    li.questionItem(data-question= "6") 
                         .titleItemQuestion 6
                         .textValSelected A
                         .textValSelected B 
                         .textValSelected.active C 
                         .textValSelected D
-                    li.questionItem.event-none(data-question= "7") 
+                    li.questionItem(data-question= "7") 
                         .titleItemQuestion 7
                         .textValSelected.active A
                         .textValSelected B 
                         .textValSelected C 
                         .textValSelected D
-                    li.questionItem.event-none(data-question= "8") 
+                    li.questionItem(data-question= "8") 
                         .titleItemQuestion 8
                         .textValSelected A
                         .textValSelected B 
                         .textValSelected C 
                         .textValSelected.active D
-                    li.questionItem.event-none(data-question= "9") 
+                    li.questionItem(data-question= "9") 
                         .titleItemQuestion 9
                         .textValSelected A
                         .textValSelected.active B 
                         .textValSelected C 
                         .textValSelected D
-                    li.questionItem.event-none(data-question= "10") 
+                    li.questionItem(data-question= "10") 
                         .titleItemQuestion 10
                         .textValSelected A
                         .textValSelected B 
@@ -136,6 +106,7 @@ section.container-fluid
 script. 
     const questionList = {
         1: {
+            id: 1,
             title: "Câu 1: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
             A: 'Sở hữu di sản văn hóa',
             B: 'Sở hữu di sản văn hóa',
@@ -143,67 +114,76 @@ script.
             D: 'Sở hữu di sản văn hóa',
         },
         2: {
-            title: "Câu 2: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-            A: 'Sở hữu di sản văn hóa',
-            B: 'Sở hữu di sản văn hóa',
-            C: 'Sở hữu di sản văn hóa',
-            D: 'Sở hữu di sản văn hóa',
+            id: 2,
+            title: "Câu 2: Di sản văn hóa vật thể và phi vật thể hay còn được gọi là?",
+            A: 'Di sản văn hóa vật chất và tinh thần.',
+            B: 'Di sản văn hóa vô hình và hữu hình.',
+            C: 'Di sản văn hóa trừu tượng và phi trừu tượng.',
+            D: 'Di sản văn hóa đếm được và không đếm được.',
         },
         3: {
-            title: "Câu 3: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-            A: 'Sở hữu di sản văn hóa',
-            B: 'Sở hữu di sản văn hóa',
-            C: 'Sở hữu di sản văn hóa',
-            D: 'Sở hữu di sản văn hóa',
+            id: 3,
+            title: "Câu 3: Những sản phẩm tinh thần có giá trị về lịch sử, văn hoá, khoa học được lưu giữ bằng trí nhớ, chữ viết, truyền miệng, truyền nghề, trình diễn và các hình thức lưu giữ, lưu truyền khác được gọi là ?",
+            A: 'Di sản.',
+            B: 'Di sản văn hóa.',
+            C: 'Di sản văn hóa vật thể.',
+            D: 'Di sản văn hóa phi vật thể.',
         },
         4: {
-            title: "Câu 4: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-            A: 'Sở hữu di sản văn hóa',
-            B: 'Sở hữu di sản văn hóa',
-            C: 'Sở hữu di sản văn hóa',
-            D: 'Sở hữu di sản văn hóa',
+            id: 4,
+            title: "Câu 4: Di sản văn hóa vật thể bao gồm?",
+            A: 'Di tích lịch sử - văn hóa và tài nguyên thiên nhiên.',
+            B: 'Danh lam thắng cảnh và tài nguyên thiên nhiên.',
+            C: 'Tài nguyên thiên nhiên và môi trường.',
+            D: 'Di tích lịch sử - văn hóa và danh lam thắng cảnh.',
         },
         5: {
-            title: "Câu 5: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-            A: 'Sở hữu di sản văn hóa',
-            B: 'Sở hữu di sản văn hóa',
-            C: 'Sở hữu di sản văn hóa',
-            D: 'Sở hữu di sản văn hóa',
+            id: 5,
+            title: "Câu 5: Tính đến năm 2019, Việt Nam có bao nhiêu di sản văn hóa được UNESCO công nhận?",
+            A: '13',
+            B: '14',
+            C: '15',
+            D: '16',
         },
         6: {
-            title: "Câu 6: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-            A: 'Sở hữu di sản văn hóa',
-            B: 'Sở hữu di sản văn hóa',
-            C: 'Sở hữu di sản văn hóa',
-            D: 'Sở hữu di sản văn hóa',
+            id: 6,
+            title: "Câu 6: Di sản tư liệu của Việt Nam được công nhận di sản tư liệu thế giới là?",
+            A: 'Mộc bản triều Nguyễn.',
+            B: 'Châu bản triều Nguyễn.',
+            C: 'Mộc bản kinh phật chùa Vĩnh Nghiêm.',
+            D: 'Cả A,B,C.',
         },
         7: {
-            title: "Câu 7: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-            A: 'Sở hữu di sản văn hóa',
-            B: 'Sở hữu di sản văn hóa',
-            C: 'Sở hữu di sản văn hóa',
-            D: 'Sở hữu di sản văn hóa',
+            id: 7,
+            title: "Câu 7: Nếu phát hiện trong vườn nhà có vật cổ không rõ nguồn gốc từ đâu bạn sẽ làm gì?",
+            A: 'Báo cho chính quyền địa phương.',
+            B: 'Mang đi bán.',
+            C: 'Lờ đi coi như không biết.',
+            D: 'Giấu không cho ai biết.',
         },
         8: {
-            title: "Câu 8: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-            A: 'Sở hữu di sản văn hóa',
-            B: 'Sở hữu di sản văn hóa',
-            C: 'Sở hữu di sản văn hóa',
-            D: 'Sở hữu di sản văn hóa',
+            id: 8,
+            title: "Câu 8: Những sản phẩm tinh thần vật chất có giá trị lịch sử, văn hóa, khoa học, được lưu truyền từ thế hệ này sang thế hệ khác được gọi là",
+            A: 'di sản văn hóa',
+            B: 'thành tựu văn hóa',
+            C: 'truyền thống văn hóa',
+            D: 'giá trị văn hóa',
         },
         9: {
-            title: "Câu 9: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-            A: 'Sở hữu di sản văn hóa',
-            B: 'Sở hữu di sản văn hóa',
-            C: 'Sở hữu di sản văn hóa',
-            D: 'Sở hữu di sản văn hóa',
+            id: 9,
+            title: "Câu 9: Các di sản văn hóa phi vật thể được UNESCO công nhận của Việt Nam",
+            A: 'Nhã nhạc cung đình Huế',
+            B: 'Dân ca quan họ',
+            C: 'Ca trù',
+            D: 'Tất cả đáp án đúng',
         },
         10: {
-            title: "Câu 10: Theo quy định tại Luật Di sản văn hóa, tổ chức, cá nhân có quyền nào dưới đây đối với di sản văn hóa?",
-            A: 'Sở hữu di sản văn hóa',
-            B: 'Sở hữu di sản văn hóa',
-            C: 'Sở hữu di sản văn hóa',
-            D: 'Sở hữu di sản văn hóa',
+            id: 10,
+            title: "Câu 10: Phạm tội chiếm giữ tài sản có giá trị từ 200 triệu đồng trở lên hoặc cổ vật, vật có giá trị lịch sử, văn hoá có giá trị đặc biệt, thì bị phạt tù từ",
+            A: 'Một đến năm năm',
+            B: 'Hai đến bốn năm',
+            C: 'Một đến ba năm',
+            D: 'Một đến bốn năm',
         },
     }
 // end main
