@@ -59,6 +59,7 @@
             "jquery-ui.min",
             "toast",
             "validation",
+            "toast",
             "InformationForm"
         ]
     }

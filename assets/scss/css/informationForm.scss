@@ -8,6 +8,10 @@
 
 @import "../vendors/bootstrap-datepicker";
 
+// toast
+@import "../vendors/toast-mesage";
+// end toast
+
 .inforFormWrapper {
   height: calc(100vh - 120px - 40px);
   display: flex;
@@ -69,7 +73,7 @@
           align-items: center;
           gap: 0 4px;
           color: $color8;
-          svg{
+          svg {
             height: 16px;
             fill: $color8;
           }
@@ -94,6 +98,43 @@
         height: 40px;
         border-radius: 4px !important;
         margin-top: 10px;
+        position: relative;
+        // Loader
+        span{
+          color: $color1;
+        }
+        .loader {
+          display: none;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: 3px solid #fff;
+          border-left: 3px solid transparent;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          animation: spin linear infinite forwards 1s;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          -webkit-animation: spin linear infinite forwards 1s;
+        }
+        &.is-loading {
+          pointer-events: none;
+          opacity: 0.5;
+          .loader {
+            display: block;
+          }
+          span {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -187,7 +228,7 @@
 }
 
 .datepicker table tr td span.active.active,
-.datepicker table tr td.active{
+.datepicker table tr td.active {
   background-image: none !important;
   background-color: $color3 !important;
 }
@@ -196,19 +237,19 @@
   @include text14;
 }
 
-.decurityCodeWrap{
+.decurityCodeWrap {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  .imageSecurityCode{
+  .imageSecurityCode {
     width: 80px;
   }
   .buttonRefresh {
-    img{
+    img {
       width: 25px;
       height: 25px;
     }
-  } 
+  }
 }
 
 /* Mobile & tablet: width <1024px */

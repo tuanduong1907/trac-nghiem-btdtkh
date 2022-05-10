@@ -26,7 +26,7 @@ section.container-fluid.inforFormWrapper
                         .inputGroupItem
                             .iconItem
                             input.formItemInput.checkInModalBookRoom#birthday(type='text' name='birthday' readonly='true' placeholder='Chọn ngày')
-                        span.formMessage
+                        //- span.formMessage
                 .formItemWrap
                     .formItem 
                         label.formItemName(for='school')
@@ -54,7 +54,8 @@ section.container-fluid.inforFormWrapper
                     a.buttonRefresh(href='javascript:void(0);')
                         img.iconRefresh(src='images/icon/icon-refresh.png' alt='')
                 button.button.buttonPrimary1.btnSubmit
-                    | Đăng Ký 
+                    .loader
+                    span Đăng Ký 
 
 //end information form
 
