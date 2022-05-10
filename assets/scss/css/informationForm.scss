@@ -65,6 +65,14 @@
           margin-bottom: 5px;
           @include text14;
           font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 0 4px;
+          color: $color8;
+          svg{
+            height: 16px;
+            fill: $color8;
+          }
         }
         .formItemInput {
           padding: 5px 12px;
