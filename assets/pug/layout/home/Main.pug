@@ -100,8 +100,13 @@ section.container-fluid
                         .textValSelected B 
                         .textValSelected C 
                         .textValSelected D
+                    li.questionItem(data-question= "11") 
+                        .titleItemQuestion 11
+                        .textValSelected A
+                        .textValSelected B 
+                        .textValSelected C 
+                        .textValSelected D
             .questionBtnWrap
-                button.questionBtn.button.buttonSecondary Dự đoán
                 button.questionBtn.button.buttonPrimary1#btnSubmit Nộp bài
 script. 
     const questionList = {
@@ -184,6 +189,14 @@ script.
             B: 'Hai đến bốn năm',
             C: 'Một đến ba năm',
             D: 'Một đến bốn năm',
+        },
+        11: {
+            id: 11,
+            title: "Câu 11: Dự đoán số người làm đúng",
+            A: '100 người',
+            B: '200 người',
+            C: '300 người',
+            D: '400 người',
         },
     }
     const answerList = {
