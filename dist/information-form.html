@@ -80,28 +80,32 @@
               <div class="formItemWrap">
                 <div class="formItem"> 
                   <label class="formItemName" for="fullName">Họ và tên</label>
-                  <input class="formItemInput" id="fullName" type="text" name="fullName" placeholder=" nhập họ tên..."><span class="formMessage"></span>
+                  <input class="formItemInput" id="fullName" type="text" name="fullName" placeholder=" Nhập họ tên..."><span class="formMessage"></span>
                 </div>
                 <div class="formItem"> 
                   <label class="formItemName" for="birthday">Ngày sinh</label>
-                  <input class="formItemInput" id="birthday" type="text" name="birthday" placeholder=" nhập ngày sinh..."><span class="formMessage"></span>
+                  <div class="inputGroupItem">
+                    <div class="iconItem"></div>
+                    <input class="formItemInput checkInModalBookRoom" id="birthday" type="text" readonly="true" placeholder="Chọn ngày">
+                  </div><span class="formMessage"></span>
                 </div>
               </div>
               <div class="formItemWrap">
                 <div class="formItem"> 
                   <label class="formItemName" for="school">Trường</label>
-                  <input class="formItemInput" id="school" type="text" name="school" placeholder=" nhập tên trường..."><span class="formMessage"></span>
+                  <input class="formItemInput" id="school" type="text" name="school" placeholder=" Nhập tên trường..."><span class="formMessage"></span>
                 </div>
                 <div class="formItem"> 
                   <label class="formItemName" for="class">Lớp</label>
-                  <input class="formItemInput" id="class" type="text" name="class" placeholder=" nhập lớp..."><span class="formMessage"></span>
+                  <input class="formItemInput" id="class" type="text" name="class" placeholder=" Nhập lớp..."><span class="formMessage"></span>
                 </div>
               </div>
               <div class="formItem"> 
                 <label class="formItemName" for="address">Địa chỉ</label>
-                <input class="formItemInput" id="address" type="text" name="address" placeholder=" nhập địa chỉ..."><span class="formMessage"></span>
+                <input class="formItemInput" id="address" type="text" name="address" placeholder=" Nhập địa chỉ..."><span class="formMessage"></span>
               </div>
-              <button class="button buttonPrimary1 btnSubmit">Submit </button>
+              <div class="decurityCodeWrap"><img class="imageSecurityCode" src="images/introduction/capcha.jpg" alt=""><a class="buttonRefresh" href="javascript:void(0);"><img class="iconRefresh" src="images/icon/icon-refresh.png" alt=""></a></div>
+              <button class="button buttonPrimary1 btnSubmit">Đăng Ký </button>
             </form>
           </div>
         </div>

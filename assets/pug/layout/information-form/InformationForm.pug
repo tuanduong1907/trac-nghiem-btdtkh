@@ -14,31 +14,37 @@ section.container-fluid.inforFormWrapper
                     .formItem 
                         label.formItemName(for='fullName')
                             | Họ và tên
-                        input#fullName(type='text' name='fullName' placeholder=' nhập họ tên...').formItemInput
+                        input#fullName(type='text' name='fullName' placeholder=' Nhập họ tên...').formItemInput
                         span.formMessage
                     .formItem 
                         label.formItemName(for='birthday')
                             | Ngày sinh
-                        input#birthday(type='text' name='birthday' placeholder=' nhập ngày sinh...').formItemInput
+                        .inputGroupItem
+                            .iconItem
+                            input.formItemInput.checkInModalBookRoom#birthday(type='text' readonly='true' placeholder='Chọn ngày')
                         span.formMessage
                 .formItemWrap
                     .formItem 
                         label.formItemName(for='school')
                             | Trường
-                        input#school(type='text' name='school' placeholder=' nhập tên trường...').formItemInput
+                        input#school(type='text' name='school' placeholder=' Nhập tên trường...').formItemInput
                         span.formMessage
                     .formItem 
                         label.formItemName(for='class')
                             | Lớp
-                        input#class(type='text' name='class' placeholder=' nhập lớp...').formItemInput
+                        input#class(type='text' name='class' placeholder=' Nhập lớp...').formItemInput
                         span.formMessage
                 .formItem 
                     label.formItemName(for='address')
                         | Địa chỉ
-                    input#address(type='text' name='address' placeholder=' nhập địa chỉ...').formItemInput
+                    input#address(type='text' name='address' placeholder=' Nhập địa chỉ...').formItemInput
                     span.formMessage
+                .decurityCodeWrap
+                    img.imageSecurityCode(src='images/introduction/capcha.jpg' alt='')
+                    a.buttonRefresh(href='javascript:void(0);')
+                        img.iconRefresh(src='images/icon/icon-refresh.png' alt='')
                 button.button.buttonPrimary1.btnSubmit
-                    | Submit 
+                    | Đăng Ký 
 
 //end information form
 
