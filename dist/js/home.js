@@ -171,15 +171,15 @@ $(document).ready(function () {
   };
   renderQuestion(num);
 
-  const renderAnswer = (number) => {
-    const AnswerId = answerList[number];
-    const answerIdDataset = e.target.dataset.answer;
-    if(number === answerIdDataset) {
-      answerList[number];
-    }
+  // const renderAnswer = (number) => {
+  //   const AnswerId = answerList[number];
+  //   const answerIdDataset = e.target.dataset.answer;
+  //   if(number === answerIdDataset) {
+  //     answerList[number];
+  //   }
 
-    console.log(AnswerId);
-  };
+  //   console.log(AnswerId);
+  // };
 
   questionBtnPrev.addEventListener("click", () => {
     questionBtnNext.style.pointerEvents = "auto";
@@ -206,7 +206,6 @@ $(document).ready(function () {
     item.addEventListener("click", (e) => {
       const question = e.target.dataset.question;
       renderQuestion(question);
-      renderAnswer(question);
     })
   );
 });

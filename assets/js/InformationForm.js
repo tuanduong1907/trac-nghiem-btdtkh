@@ -17,7 +17,6 @@ Validator({
     Validator.isRequired("#address", "Nhập địa chỉ của bạn"),
     Validator.isRequired("#phone", "Nhập số điện thoại của bạn"),
     Validator.minLength("#phone", 10),
-
   ],
 
   onSubmit: function (data) {
